@@ -1,0 +1,26 @@
+[
+  {
+    "name": "MusicVolume",
+    "value": 0.8
+  },
+  {
+    "name": "SoundVolume",
+    "value": 0.8
+  },
+  {
+    "name": "ResolutionIndex",
+    "value": 12
+  },
+  {
+    "name": "Fullscreen",
+    "value": 3
+  },
+  {
+    "name": "RefreshRate",
+    "value": 0
+  },
+  {
+    "name": "Language",
+    "value": 10
+  }
+]
