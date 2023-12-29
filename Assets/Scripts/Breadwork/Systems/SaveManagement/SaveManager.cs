@@ -1,6 +1,7 @@
 using Unity.Burst;
 using UnityEngine;
 using System.IO;
+using System;
 
 namespace Scripts.SaveManagement
 {
@@ -32,10 +33,7 @@ namespace Scripts.SaveManagement
         /// <param name="saveSystem">Saver</param>
         public static void SaveToFile<T>(T input, string fileName, Savers saveSystem = Savers.Json, string subFolder = DEFAULT_SAVE_SUBFOLDER)
         {
-            ISaveSystem localSaveSystem = GetSaveSystem(saveSystem);
-            string path = CreatePath(fileName, subFolder, localSaveSystem);
-
-            localSaveSystem.Save(input, path);
+            SaveToFile(input, fileName, GetSaveSystem(saveSystem), subFolder);
         }
         /// <summary>
         /// Saves your value to a file in a subfolder you specify relative to the Resources folder
@@ -63,13 +61,7 @@ namespace Scripts.SaveManagement
         /// <param name="saveSystem">Saver</param>
         public static T LoadFromFile<T>(string fileName, Savers saveSystem = Savers.Json, string subFolder = DEFAULT_SAVE_SUBFOLDER)
         {
-            ISaveSystem localSaveSystem = GetSaveSystem(saveSystem);
-            string path = CreatePath(fileName, subFolder, localSaveSystem);
-
-            if (!ExistsFile(path))
-                throw new FileNotFoundException($"File not found ({path})");
-
-            return localSaveSystem.Load<T>(path);
+            return LoadFromFile<T>(fileName, GetSaveSystem(saveSystem), subFolder);
         }
         /// <summary>
         /// Loads a file from a subfolder you specify relative to the Resources folder
@@ -100,12 +92,7 @@ namespace Scripts.SaveManagement
         /// <param name="saveSystem">Saver</param>
         public static void SaveToPath<T>(T input, string path, Savers saveSystem = Savers.Json)
         {
-            ISaveSystem localSaveSystem = GetSaveSystem(saveSystem);
-
-            path = CheckExtension(path);
-            CheckDirectory(path);
-
-            localSaveSystem.Save(input, path);
+            SaveToPath(input, path, GetSaveSystem(saveSystem));
         }
         /// <summary>
         /// Saves your value to a file in a subfolder you specify relative to the Resources folder
@@ -132,15 +119,7 @@ namespace Scripts.SaveManagement
         /// <param name="saveSystem">Saver</param>
         public static T LoadFromPath<T>(string path, Savers saveSystem = Savers.Json)
         {
-            ISaveSystem localSaveSystem = GetSaveSystem(saveSystem);
-
-            if (!ExistsFile(path))
-                throw new FileNotFoundException($"File not found ({path})");
-
-            path = CheckExtension(path);
-            CheckDirectory(path);
-
-            return localSaveSystem.Load<T>(path);
+            return LoadFromPath<T>(path, GetSaveSystem(saveSystem));
         }
         /// <summary>
         /// Loads a file from a path you specify
@@ -172,19 +151,24 @@ namespace Scripts.SaveManagement
         {
             switch (saver)
             {
-                case Savers.Json:
-                    return savers_json;
-                case Savers.YAML:
-                    return savers_yaml;
-                case Savers.XML:
-                    return savers_xml;
-                case Savers.Binary:
-                    return savers_binary;
-                case Savers.WithoutSerialization:
-                    return savers_without_serialization;
-                default:
-                    return SaveSystem;
+                case Savers.Json: return savers_json;
+                case Savers.YAML: return savers_yaml;
+                case Savers.XML: return savers_xml;
+                case Savers.Binary: return savers_binary;
+                case Savers.WithoutSerialization: return savers_without_serialization;
+                default: return SaveSystem;
             }
+        }
+        public static ISaveSystem GetSaveSystem<T>() where T : ISaveSystem
+        {
+            Type type = typeof(T);
+
+            if (type == typeof(JsonSaver)) return savers_json;
+            else if (type == typeof(YamlSaver)) return savers_yaml;
+            else if (type == typeof(XmlSaver)) return savers_xml;
+            else if (type == typeof(BinarySaver)) return savers_binary;
+            else if (type == typeof(WithoutSerializationSaver)) return savers_without_serialization;
+            else return savers_json;
         }
         #endregion
 
