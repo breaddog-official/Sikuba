@@ -99,5 +99,6 @@ Shader "Mobile/VertexLit - Single color" {
             ENDCG
         }
     }
+    Fallback "Mobile/VertexLit"
 }
      

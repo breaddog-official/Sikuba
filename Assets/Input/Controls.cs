@@ -70,7 +70,7 @@ namespace Scripts.InputManagement
                 {
                     ""name"": ""WASD"",
                     ""id"": ""0f8a8858-7411-42d8-8d9e-1cca1bbab3e5"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=1)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -125,7 +125,7 @@ namespace Scripts.InputManagement
                 {
                     ""name"": ""Arrows"",
                     ""id"": ""fc196e22-408c-4e64-92ee-13ca68916bb1"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=1)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

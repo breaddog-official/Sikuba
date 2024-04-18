@@ -1,68 +1,81 @@
+using Mirror;
 using NaughtyAttributes;
 using Scripts.InputManagement;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField, BoxGroup("General")] private float MovementSpeed;
-    [SerializeField, BoxGroup("General")] private float RotationSpeed;
+    [SerializeField, BoxGroup("General")] private float MovementSpeed = 5.0f;
+    [SerializeField, BoxGroup("General")] private float MovementAcceleration = 0.2f;
+    [SerializeField, BoxGroup("General")] private float RotationSpeed = 2.0f;
 
     [SerializeField, BoxGroup("MouseRotation")] private LayerMask ignoreLayers;
     [SerializeField, BoxGroup("MouseRotation")] private bool RotateTowardMouse = true;
 
-    // Links
     private Camera _camera;
     private Player _player;
+    private Rigidbody _rb;
+    private Animator _anim;
+
+    Vector3 targetMovementVector;
+
+    Vector2 currentInputVector;
+    Vector2 smoothInputVector;
 
     private void Start()
     {
         _player = GetComponent<Player>();
+        _anim = GetComponentInChildren<Animator>();
+        _rb = GetComponentInChildren<Rigidbody>();
         _camera = MainCamera.Instance.Camera;
 
-        if (_player.isLocalPlayer)
-        {
-            Destroy(this);
-        }
+        if (!_player.isLocalPlayer && (NetworkManager.singleton ? NetworkManager.singleton.isNetworkActive : false)) Destroy(this);
     }
-    private void LateUpdate()
+    private void FixedUpdate() => _rb.Move(CalculateMove(), RotateTowardMouse ? CalculateRotateToMouse() : CalculateRotateToMovement());
+    private void LateUpdate() => Animate();
+    #region Moving
+    private Vector3 CalculateMove()
     {
-        var moveInputVector = InputManager.Controls.Game.Move.ReadValue<Vector2>();
-
-        var targetVector = new Vector3(moveInputVector.x, 0, moveInputVector.y);
-        var movementVector = MoveTowardTarget(targetVector);
-
-        if (RotateTowardMouse) RotateFromMouseVector();
-        else RotateTowardMovementVector(movementVector);
+        Vector3 targetPosition = GetTargetPosition(MovementAcceleration, out targetMovementVector, true);
+        targetPosition.y = transform.position.y;
+        return targetPosition;
     }
-
-    private void RotateFromMouseVector()
+    private Vector3 GetTargetPosition(float smoothTime, out Vector3 targetVector, bool withSmooth = true)
+    {
+        Vector2 moveInputVector = InputManager.Controls.Game.Move.ReadValue<Vector2>();
+        
+        if (withSmooth) currentInputVector = Vector2.SmoothDamp(currentInputVector, moveInputVector, ref smoothInputVector, smoothTime);
+        targetVector = Quaternion.Euler(0, _camera.gameObject.transform.rotation.eulerAngles.y, 0) * 
+            new Vector3(withSmooth ? currentInputVector.x : moveInputVector.x, 0, withSmooth ? currentInputVector.y : moveInputVector.y);
+        return transform.position + targetVector * (MovementSpeed * Time.deltaTime);
+    }
+    #endregion
+    #region Rotation
+    private Quaternion CalculateRotateToMouse()
     {
         Ray ray = _camera.ScreenPointToRay(InputManager.Controls.Game.Point.ReadValue<Vector2>());
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance: 300f, ~ignoreLayers))
         {
-            Quaternion rotation = Quaternion.LookRotation(hitInfo.point);
-            rotation.x = 0.0f;
-            rotation.z = 0.0f;
+            Vector3 currentLookVector = new Vector3(hitInfo.point.x, transform.position.y, hitInfo.point.z);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, RotationSpeed);
+            var targetRotation = Quaternion.LookRotation(currentLookVector - transform.position);
+            return Quaternion.Slerp(transform.rotation, targetRotation, RotationSpeed * Time.deltaTime);
         }
+        return default;
     }
-
-    private Vector3 MoveTowardTarget(Vector3 targetVector)
+    private Quaternion CalculateRotateToMovement()
     {
-        var speed = MovementSpeed * Time.deltaTime;
-
-        targetVector = Quaternion.Euler(0, _camera.gameObject.transform.rotation.eulerAngles.y, 0) * targetVector;
-        var targetPosition = transform.position + targetVector * speed;
-        transform.position = targetPosition;
-        return targetVector;
+        if (targetMovementVector.magnitude == 0) { return default; }
+        var rotation = Quaternion.LookRotation(targetMovementVector);
+        return Quaternion.RotateTowards(transform.rotation, rotation, RotationSpeed / 10.0f);
     }
-
-    private void RotateTowardMovementVector(Vector3 movementDirection)
+    #endregion
+    private void Animate()
     {
-        if (movementDirection.magnitude == 0) { return; }
-        var rotation = Quaternion.LookRotation(movementDirection);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, RotationSpeed);
+        Vector3 fixedRotation = Quaternion.Inverse(transform.rotation) * targetMovementVector;
+        _anim.SetFloat("InclineX", fixedRotation.x);
+        _anim.SetFloat("InclineY", fixedRotation.z);
     }
 }
