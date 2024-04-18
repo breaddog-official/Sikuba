@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
 using NaughtyAttributes;
 using Unity.Burst;
 using System;
@@ -14,10 +12,10 @@ namespace Scripts.Settings
     [BurstCompile]
     public class SettingsManager : MonoBehaviour
     {
-        [SerializeField, BoxGroup("Scene Links")] private UniversalAdditionalCameraData[] cameras;
-        [SerializeField, BoxGroup("Scene Links")] private Volume[] volumes;
-        [SerializeField, BoxGroup("Scene Links")] private VolumeProfile[] volumeProfiles;
-        [SerializeField, BoxGroup("Scene Links")] private ReflectionProbe[] reflectionProbes;
+        //[SerializeField, BoxGroup("Scene Links")] private UniversalAdditionalCameraData[] cameras;
+        //[SerializeField, BoxGroup("Scene Links")] private Volume[] volumes;
+        //[SerializeField, BoxGroup("Scene Links")] private VolumeProfile[] volumeProfiles;
+        //[SerializeField, BoxGroup("Scene Links")] private ReflectionProbe[] reflectionProbes;
 
         public static SettingsManager Instance { get; private set; }
         public static List<ISetting> Settings { get; set; }
@@ -44,7 +42,7 @@ namespace Scripts.Settings
         /// </summary>
         public static void Save()
         {
-            List<SettingToSave> listToSave = new List<SettingToSave>();
+            List<SettingToSave> listToSave = new();
             foreach (ISetting s in Settings)
             {
                 listToSave.Add(new SettingToSave(s.Name, s.Value));

@@ -14,12 +14,12 @@ namespace Scripts.TranslateManagement
         public static SystemLanguage GameLanguage { get; private set; }
         public static event Action GameLanguageChanged;
 
-        public static string[] Translation { get; private set; }
+        public static Translation Translation { get; private set; }
 
         public static void Initialize() => ChangeLanguage(GetSystemLanguage(), false);
         private static void LoadLanguage()
         {
-            Translation = SaveManager.LoadFromFile<string[]>
+            Translation = SaveManager.LoadFromFile<Translation>
                 (Enum.GetName(typeof(SystemLanguage), GameLanguage), SaveManager.Savers.YAML, LANGUAGES_SUBFOLDER);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Scripts.TranslateManagement
         public static SystemLanguage GetSystemLanguage()
         {
             if (GameManager.GameDataConfig.IsDebug)
-                return SystemLanguage.English;
+                return GameManager.GameDataConfig.DefaultLanguage;
             else
                 return Application.systemLanguage;
         }

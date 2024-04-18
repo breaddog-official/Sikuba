@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Scripts.Core;
 using Unity.Burst;
 
 namespace Scripts.SaveManagement
@@ -16,6 +15,8 @@ namespace Scripts.SaveManagement
             Formatting = Formatting.Indented,
             ContractResolver = new DefaultContractResolver { NamingStrategy = new CamelCaseNamingStrategy() },
         };
+        public JsonSaver() { }
+        public JsonSaver(JsonSerializerSettings options) { this.options = options; }
 
         public void Save<T>(T input, string path)
         {

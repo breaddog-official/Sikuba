@@ -14,7 +14,7 @@ namespace Scripts.TranslateManagement
         }
         public override void ChangeElement()
         {
-            text.SetText(TranslateManager.Translation[Index]);
+            text.SetText(TranslationString);
         }
     }
 }
