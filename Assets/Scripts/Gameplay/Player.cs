@@ -1,32 +1,29 @@
 using Mirror;
 using NaughtyAttributes;
-using Scripts.InputManagement;
+using System;
+using Unity.Burst;
 using UnityEngine;
 
-public class Player : NetworkBehaviour, IDamageable
+namespace Scripts.Gameplay
 {
-    private const float MAX_HEALTH = 100.0f;
-    [field: SerializeField, BoxGroup("Health"), ProgressBar("Health", MAX_HEALTH, EColor.Red)] 
-    public float Health { get; private set; } = MAX_HEALTH;
+    [BurstCompile]
+    public class Player : NetworkBehaviour, IDamageable
+    {
+        [field: SerializeField, BoxGroup("Health"), ProgressBar("Health", MAX_HEALTH, EColor.Red)]
+        public float Health { get; private set; } = MAX_HEALTH;
 
-    protected void Start()
-    {
-        
-    }
-    protected void FixedUpdate()
-    {
-        if (isLocalPlayer)
+        private const float MAX_HEALTH = 100.0f;
+
+        [Command, Server]
+        public void Heal(float value)
         {
-            
+            Health = Mathf.Clamp(Health + Math.Abs(value), 0.0f, MAX_HEALTH);
+        }
+        [Command, Server]
+        public void Hurt(float damage)
+        {
+            Health = Mathf.Clamp(Health - Math.Abs(damage), 0.0f, MAX_HEALTH);
+            Debug.Log(Health);
         }
     }
-    public void ChangeHealth(float value)
-    {
-        Health = Mathf.Clamp(Health + value, 0.0f, MAX_HEALTH);
-    }
-}
-public interface IDamageable
-{
-    public float Health { get; }
-    void ChangeHealth(float value);
 }

@@ -16,9 +16,19 @@ namespace Scripts.SaveManagement
             Binary,
             WithoutSerialization,
         }
+        /// <summary>
+        /// <para>Impact of game updates on files</para>
+        /// 
+        /// <seealso cref="Persistent"/> = <see cref="Application.persistentDataPath"/> <br />
+        /// <seealso cref="UpdateWithApplication"/> = <see cref="Application.streamingAssetsPath"/> <br />
+        /// </summary>
+        public enum UpdateSensitivity
+        {
+            Persistent,
+            UpdateWithApplication,
+        }
 
-        public const string SAVE_FOLDER = "Resources";
-        public const string DEFAULT_SAVE_SUBFOLDER = "Resources/Configs";
+        public const string DEFAULT_SAVE_SUBFOLDER = "Configs";
 
         public static ISaveSystem SaveSystem => savers_json;
 
@@ -31,9 +41,9 @@ namespace Scripts.SaveManagement
         /// <param name="fileName">Name of file to save. The name of the saved file. Can be done with or without extension.</param>
         /// <param name="subFolder">Sub folder relative to the Resources folder. For example "Resources/Languages" or "Languages"</param>
         /// <param name="saveSystem">Saver</param>
-        public static void SaveToFile<T>(T input, string fileName, Savers saveSystem = Savers.Json, string subFolder = DEFAULT_SAVE_SUBFOLDER)
+        public static void SaveToFile<T>(T input, string fileName, Savers saveSystem = Savers.Json, string subFolder = DEFAULT_SAVE_SUBFOLDER, UpdateSensitivity sensitivity = UpdateSensitivity.Persistent)
         {
-            SaveToFile(input, fileName, GetSaveSystem(saveSystem), subFolder);
+            SaveToFile(input, fileName, GetSaveSystem(saveSystem), subFolder, sensitivity);
         }
         /// <summary>
         /// Saves your value to a file in a subfolder you specify relative to the Resources folder
@@ -43,10 +53,10 @@ namespace Scripts.SaveManagement
         /// <param name="fileName">Name of file to save. The name of the saved file. Can be done with or without extension.</param>
         /// <param name="subFolder">Sub folder relative to the Resources folder. For example "Resources/Languages" or "Languages"</param>
         /// <param name="saveSystem">Saver</param>
-        public static void SaveToFile<T>(T input, string fileName, ISaveSystem saveSystem, string subFolder = DEFAULT_SAVE_SUBFOLDER)
+        public static void SaveToFile<T>(T input, string fileName, ISaveSystem saveSystem, string subFolder = DEFAULT_SAVE_SUBFOLDER, UpdateSensitivity sensitivity = UpdateSensitivity.Persistent)
         {
             ISaveSystem localSaveSystem = saveSystem == null ? saveSystem : SaveSystem;
-            string path = CreatePath(fileName, subFolder, localSaveSystem);
+            string path = CreatePath(fileName, subFolder, localSaveSystem, sensitivity);
 
             localSaveSystem.Save(input, path);
         }
@@ -59,9 +69,9 @@ namespace Scripts.SaveManagement
         /// <param name="fileName">Name of file to save. The name of the saved file. Can be done with or without extension.</param>
         /// <param name="subFolder">Sub folder relative to the Resources folder. For example "Resources/Languages" or "Languages"</param>
         /// <param name="saveSystem">Saver</param>
-        public static T LoadFromFile<T>(string fileName, Savers saveSystem = Savers.Json, string subFolder = DEFAULT_SAVE_SUBFOLDER)
+        public static T LoadFromFile<T>(string fileName, Savers saveSystem = Savers.Json, string subFolder = DEFAULT_SAVE_SUBFOLDER, UpdateSensitivity sensitivity = UpdateSensitivity.Persistent)
         {
-            return LoadFromFile<T>(fileName, GetSaveSystem(saveSystem), subFolder);
+            return LoadFromFile<T>(fileName, GetSaveSystem(saveSystem), subFolder, sensitivity);
         }
         /// <summary>
         /// Loads a file from a subfolder you specify relative to the Resources folder
@@ -70,10 +80,10 @@ namespace Scripts.SaveManagement
         /// <param name="fileName">Name of file to save. The name of the saved file. Can be done with or without extension.</param>
         /// <param name="subFolder">Sub folder relative to the Resources folder. For example "Resources/Languages" or "Languages"</param>
         /// <param name="saveSystem">Saver</param>
-        public static T LoadFromFile<T>(string fileName, ISaveSystem saveSystem, string subFolder = DEFAULT_SAVE_SUBFOLDER)
+        public static T LoadFromFile<T>(string fileName, ISaveSystem saveSystem, string subFolder = DEFAULT_SAVE_SUBFOLDER, UpdateSensitivity sensitivity = UpdateSensitivity.Persistent)
         {
             ISaveSystem localSaveSystem = saveSystem == null ? saveSystem : SaveSystem;
-            string path = CreatePath(fileName, subFolder, localSaveSystem);
+            string path = CreatePath(fileName, subFolder, localSaveSystem, sensitivity);
 
             if (!ExistsFile(path))
                 throw new FileNotFoundException($"File not found ({path})");
@@ -192,21 +202,32 @@ namespace Scripts.SaveManagement
         }
         public static void CheckDirectory(string path)
         {
-            if (!Directory.Exists(Path.GetDirectoryName(path)))
+            string directoryPath = Path.GetDirectoryName(path);
+            if (!Directory.Exists(directoryPath))
             {
-                Directory.CreateDirectory(path);
+                Directory.CreateDirectory(directoryPath);
             }
         }
         #endregion
         /// <summary>
         /// Creates a platform-specific file path to the save folder and adds an extension (if missing)
         /// </summary>
-        public static string CreatePath(string fileName, string subFolder = DEFAULT_SAVE_SUBFOLDER, ISaveSystem saveSystem = null)
+        public static string CreatePath(string fileName, string subFolder = DEFAULT_SAVE_SUBFOLDER, ISaveSystem saveSystem = null, UpdateSensitivity sensitivity = UpdateSensitivity.Persistent)
         {
             if (saveSystem == null) saveSystem = SaveSystem;
 
             string newPath = CheckExtension
-                (Path.Combine(GetSaveFolderPath(), Path.GetRelativePath(SAVE_FOLDER, subFolder), Path.GetFileName(fileName)), saveSystem);
+                (Path.Combine(GetSaveFolderPath(sensitivity), subFolder, Path.GetFileName(fileName)), saveSystem);
+            CheckDirectory(newPath); 
+
+            return newPath;
+        }
+        /// <summary>
+        /// Creates a platform-specific file path to the save folder
+        /// </summary>
+        public static string CreatePath(string subFolder = DEFAULT_SAVE_SUBFOLDER, UpdateSensitivity sensitivity = UpdateSensitivity.Persistent)
+        {
+            string newPath = Path.Combine(GetSaveFolderPath(sensitivity), subFolder);
             CheckDirectory(newPath);
 
             return newPath;
@@ -214,12 +235,15 @@ namespace Scripts.SaveManagement
         /// <summary>
         /// Returns a path to save folder depending on the platform
         /// </summary>
-        public static string GetSaveFolderPath()
+        public static string GetSaveFolderPath(UpdateSensitivity sensitivity)
         {
-            if (Application.platform == RuntimePlatform.Android)
-                return Path.Combine(Application.persistentDataPath, SAVE_FOLDER);
-            else
-                return Path.Combine(Application.dataPath, SAVE_FOLDER);
+            if (sensitivity == UpdateSensitivity.UpdateWithApplication) return Application.streamingAssetsPath;
+#if UNITY_EDITOR
+            else return Path.Combine(Application.dataPath, "EditorSaves", "Editor");
+#else
+            else return Application.persistentDataPath;
+#endif
+
         }
     }
 }

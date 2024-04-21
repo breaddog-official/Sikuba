@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using Scripts.Settings;
+using Unity.Burst;
 
 namespace Scripts.UI
 {
+    [BurstCompile]
     public class ResolutionDropdownHandler : MonoBehaviour
     {
         private void Start()

@@ -1,25 +1,31 @@
 ﻿using TMPro;
-using UnityEngine;
+using Unity.Burst;
 using UnityEngine.UI;
 
-public class PlayerPrefsSetter_Slider : PlayerPrefsSetter<int>
+namespace Scripts.UI.PlayerPrefs
 {
-    [SerializeField] private TMP_Text handleText;
-    private Slider slider;
-
-    private void Start()
+    using UnityEngine;
+    [BurstCompile]
+    public class PlayerPrefsSetter_Slider : PlayerPrefsSetter<int>
     {
-        slider = GetComponent<Slider>();
+        [SerializeField] private TMP_Text handleText;
+        private Slider slider;
 
-        Value = PlayerPrefs.GetInt(Key, DefaultValue);
-        PlayerPrefs.SetInt(Key, Value);
+        protected override void Start()
+        {
+            slider = GetComponent<Slider>();
 
-        slider.value = Value;
-    }
-    public void OnValueChanged(float value)
-    {
-        Value = (int)value;
-        handleText.text = Value.ToString();
-        PlayerPrefs.SetFloat(Key, Value);
+            Value = PlayerPrefs.GetInt(Key, DefaultValue);
+            PlayerPrefs.SetInt(Key, Value);
+
+            slider.value = Value;
+            slider.onValueChanged.Invoke(Value);
+        }
+        public void OnValueChanged(float value)
+        {
+            Value = (int)value;
+            handleText.text = Value.ToString();
+            PlayerPrefs.SetFloat(Key, Value);
+        }
     }
 }

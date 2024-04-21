@@ -1,8 +1,11 @@
 using Unity.Burst;
 using UnityEngine;
 
-[BurstCompile]
-public class AudioManagerHandler : MonoBehaviour
+namespace Scripts.Audio
 {
-    public AudioSource[] Sources { get; set; }
+    [BurstCompile]
+    public class AudioManagerHandler : MonoBehaviour
+    {
+        public AudioSource[] Sources { get; set; }
+    }
 }

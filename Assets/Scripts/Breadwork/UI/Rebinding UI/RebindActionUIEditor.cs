@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 using System.Linq;
+using Unity.Burst;
 using UnityEditor;
 
 ////TODO: support multi-object editing
@@ -10,6 +11,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     /// A custom inspector for <see cref="RebindActionUI"/> which provides a more convenient way for
     /// picking the binding which to rebind.
     /// </summary>
+    [BurstCompile]
     [CustomEditor(typeof(RebindActionUI))]
     public class RebindActionUIEditor : UnityEditor.Editor
     {

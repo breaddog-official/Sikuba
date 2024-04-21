@@ -8,7 +8,6 @@ namespace Scripts.InputManagement
     public static class InputManager
     {
         public static Controls Controls { get; set; }
-        public const string CONTROLS_SUBFOLDER = "Resources/Configs";
         public const string CONTROLS_FILENAME = "controls";
 
         private readonly static ISaveSystem Saver = new WithoutSerializationSaver(".json");
@@ -20,13 +19,13 @@ namespace Scripts.InputManagement
         }
         public static void SaveControlsOverrides()
         {
-            SaveManager.SaveToFile(Controls.SaveBindingOverridesAsJson(), CONTROLS_FILENAME, Saver, CONTROLS_SUBFOLDER);
+            SaveManager.SaveToFile(Controls.SaveBindingOverridesAsJson(), CONTROLS_FILENAME, Saver);
         }
         public static void LoadControlsOverrides()
         {
             try
             {
-                Controls.LoadBindingOverridesFromJson(SaveManager.LoadFromFile<string>(CONTROLS_FILENAME, Saver, CONTROLS_SUBFOLDER));
+                Controls.LoadBindingOverridesFromJson(SaveManager.LoadFromFile<string>(CONTROLS_FILENAME, Saver));
             }
             catch (FileNotFoundException)
             {

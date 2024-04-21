@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 923274036454788797}
   - component: {fileID: 6454844474251154480}
   - component: {fileID: 2250979638929920589}
-  - component: {fileID: 5428835489906411221}
+  - component: {fileID: 5209721762537189156}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -64,7 +64,7 @@ MonoBehaviour:
   runInBackground: 1
   headlessStartMode: 1
   editorAutoStart: 0
-  sendRate: 60
+  sendRate: 45
   autoStartServerBuild: 0
   autoConnectClientBuild: 0
   offlineScene: Assets/Scenes/Menu.unity
@@ -80,7 +80,7 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs:
-  - {fileID: 2168543928968364935, guid: 73488aa653dae4e4fb3c38e70ca02145, type: 3}
+  - {fileID: 8176816477770387688, guid: 8d3d59a9ca232614987072225140ff9e, type: 3}
   exceptionsDisconnect: 1
   snapshotSettings:
     bufferTimeMultiplier: 2
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transports:
+  - {fileID: 5209721762537189156}
   - {fileID: 2250979638929920589}
-  - {fileID: 5428835489906411221}
 --- !u!114 &2250979638929920589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,13 +123,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b007cc34dc2c984594d0d2d5a8b47e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Port>k__BackingField: 7777
   Channels: 0200000001000000
   Timeout: 10000
   SteamAppID: 480
   AllowSteamRelay: 1
   UseNextGenSteamNetworking: 1
   SteamUserID: 0
---- !u!114 &5428835489906411221
+--- !u!114 &5209721762537189156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6151870544703572125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Script: {fileID: 11500000, guid: f7e416e0486524f0d9580be7e13388f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   port: 7777

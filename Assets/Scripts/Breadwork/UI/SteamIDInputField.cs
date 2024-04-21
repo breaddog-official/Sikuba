@@ -1,32 +1,37 @@
 using Mirror;
 using Mirror.FizzySteam;
 using TMPro;
+using Unity.Burst;
 using UnityEngine;
 
-public class SteamIDInputField : MonoBehaviour
+namespace Scripts.UI
 {
-    private enum SteamIdFieldMode
+    [BurstCompile]
+    public class SteamIDInputField : MonoBehaviour
     {
-        Create,
-        Join,
-    }
-    [SerializeField] private SteamIdFieldMode mode;
-    private TMP_InputField inputField;
+        private enum SteamIdFieldMode
+        {
+            Create,
+            Join,
+        }
+        [SerializeField] private SteamIdFieldMode mode;
+        private TMP_InputField inputField;
 
-    private void Start()
-    {
-        inputField = GetComponent<TMP_InputField>();
+        private void Start()
+        {
+            inputField = GetComponent<TMP_InputField>();
 
-        if (mode == SteamIdFieldMode.Create)
-            inputField.text = NetworkManager.singleton.GetComponent<FizzyFacepunch>().SteamUserID.ToString();
-    }
+            if (mode == SteamIdFieldMode.Create)
+                inputField.text = NetworkManager.singleton.GetComponent<FizzyFacepunch>().SteamUserID.ToString();
+        }
 
-    public void CopyIdToBuffer()
-    {
-        GUIUtility.systemCopyBuffer = inputField.text;
-    }
-    public void PasteIdToInputField()
-    {
-        inputField.text = GUIUtility.systemCopyBuffer;
+        public void CopyIdToBuffer()
+        {
+            GUIUtility.systemCopyBuffer = inputField.text;
+        }
+        public void PasteIdToInputField()
+        {
+            inputField.text = GUIUtility.systemCopyBuffer;
+        }
     }
 }

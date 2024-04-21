@@ -1,13 +1,18 @@
+using Unity.Burst;
 using UnityEngine;
 
-public class MainCamera : MonoBehaviour
+namespace Scripts.Gameplay
 {
-    public static MainCamera Instance { get; private set; }
-    public Camera Camera { get; private set; }
-
-    private void Awake()
+    [BurstCompile]
+    public class MainCamera : MonoBehaviour
     {
-        Instance = this;
-        Camera = GetComponent<Camera>();
+        public static MainCamera Instance { get; private set; }
+        public Camera Camera { get; private set; }
+
+        private void Awake()
+        {
+            Instance = this;
+            Camera = GetComponent<Camera>();
+        }
     }
 }

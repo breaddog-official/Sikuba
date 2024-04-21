@@ -1,21 +1,28 @@
 ﻿using TMPro;
-using UnityEngine;
+using Unity.Burst;
 
-public class PlayerPrefsSetter_InputField : PlayerPrefsSetter<string>
+namespace Scripts.UI.PlayerPrefs
 {
-    private TMP_InputField inputField;
-    private void Start()
-    {
-        inputField = GetComponent<TMP_InputField>();
+    using UnityEngine;
 
-        Value = PlayerPrefs.GetString(Key, DefaultValue);
-        PlayerPrefs.SetString(Key, Value);
-
-        inputField.text = Value;
-    }
-    public void OnValueChanged(string value)
+    [BurstCompile]
+    public class PlayerPrefsSetter_InputField : PlayerPrefsSetter<string>
     {
-        Value = value;
-        PlayerPrefs.SetString(Key, Value);
+        private TMP_InputField inputField;
+        protected override void Start()
+        {
+            inputField = GetComponent<TMP_InputField>();
+
+            Value = PlayerPrefs.GetString(Key, DefaultValue);
+            PlayerPrefs.SetString(Key, Value);
+
+            inputField.text = Value;
+            inputField.onValueChanged.Invoke(Value);
+        }
+        public void OnValueChanged(string value)
+        {
+            Value = value;
+            PlayerPrefs.SetString(Key, Value);
+        }
     }
 }

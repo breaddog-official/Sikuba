@@ -6,9 +6,11 @@ using NaughtyAttributes;
 namespace Mirror.FizzySteam
 {
     [HelpURL("https://github.com/Chykary/FizzyFacepunch")]
-    public class FizzyFacepunch : Transport
+    public class FizzyFacepunch : Transport, PortTransport
     {
         private const string STEAM_SCHEME = "steam";
+        [field: SerializeField]
+        public ushort Port { get; set; }
 
         private static IClient client;
         private static IServer server;
@@ -39,7 +41,16 @@ namespace Mirror.FizzySteam
 
         private void Initialize()
         {
-            SteamClient.Init(SteamAppID, true); // If catch Exception: Could be one of the following: Steam is closed, Can't find steam_api dlls or Don't have permission to open appid.
+            try
+            {
+                SteamClient.Init(SteamAppID, true);
+                // If catch Exception: Could be one of the following: Steam is closed, Can't find steam_api dlls or Don't have permission to open appid.
+            }
+            catch(Exception exception)
+            {
+                Debug.LogWarning(exception.Message);
+            }
+
             //Debug.Log("SteamWorks initialised");
             FetchSteamID();
         }
@@ -258,7 +269,7 @@ namespace Mirror.FizzySteam
 
         public override bool Available()
         {
-            return enabled && SteamClient.IsValid;
+            return isActiveAndEnabled && SteamClient.IsValid;
         }
 
         private void FetchSteamID()

@@ -117,7 +117,7 @@ namespace Mirror
             {
                 // log when work begins = thread starts.
                 // very important for debugging threads.
-                Debug.Log($"{identifier}: started.");
+                //Debug.Log($"{identifier}: started.");
 
                 // show this thread in Unity profiler
                 Profiler.BeginThreadProfiling("Mirror Worker Threads", $"{identifier}");
@@ -158,7 +158,7 @@ namespace Mirror
                 // log when work ends = thread terminates.
                 // very important for debugging threads.
                 // 'finally' to log no matter what (even if exceptions)
-                Debug.Log($"{identifier}: ended.");
+                //Debug.Log($"{identifier}: ended.");
             }
         }
     }

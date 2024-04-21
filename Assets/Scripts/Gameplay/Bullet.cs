@@ -1,33 +1,52 @@
 using Mirror;
+using NTC.Pool;
+using Unity.Burst;
 using UnityEngine;
 
-public class Bullet : NetworkBehaviour
+namespace Scripts.Gameplay
 {
-    [SerializeField] protected float speed;
-    [SerializeField] protected float lifetime;
-    [SerializeField] protected float damage;
-    [SerializeField] protected int hits = 1;
-    [Space(10.0f)]
-    [SerializeField] protected LayerMask layerMask;
+    [BurstCompile]
+    public class Bullet : NetworkBehaviour, ISpawnable
+    {
+        [SerializeField] protected float speed = 10.0f;
+        [SerializeField] protected float lifetime = 5.0f;
+        [SerializeField] protected float damage = 10.0f;
+        [SerializeField] protected int hits = 1;
+        [Space(10.0f)]
+        [SerializeField] protected LayerMask layerMask;
 
-    private void Start()
-    {
-        Invoke(nameof(Destroy), lifetime);
-    }
-    private void Destroy() => NetworkServer.Destroy(gameObject);
-    private void FixedUpdate()
-    {
-        transform.position = Vector2.Lerp(transform.position, transform.position + transform.right, Time.fixedDeltaTime * speed);
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == layerMask)
+        protected int curHits;
+        protected Rigidbody _rb;
+
+        public void OnSpawn()
         {
-            if (TryGetComponent(out IDamageable damageable))
+            curHits = hits;
+            _rb = GetComponent<Rigidbody>();
+            Invoke(nameof(Destroy), lifetime);
+        }
+        private void Destroy()
+        {
+            NightPool.Despawn(this);
+            NetworkServer.UnSpawn(gameObject);
+        }
+        private void FixedUpdate()
+        {
+            _rb.MovePosition(Vector3.Lerp(transform.position, transform.position + transform.forward, Time.fixedDeltaTime * speed));
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            if ((layerMask & (1 << other.gameObject.layer)) != 0)
             {
-                damageable.ChangeHealth(-damage);
-                hits--;
-                if (hits == 0) Destroy();
+                if (TryGetComponent(out IDamageable damageable))
+                {
+                    Debug.Log("hurt");
+                    damageable.Hurt(damage);
+                }
+                curHits--;
+                if (curHits == 0)
+                {
+                    Destroy();
+                }
             }
         }
     }

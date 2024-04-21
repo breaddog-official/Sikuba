@@ -8,9 +8,11 @@ using kcp2k;
 using Mirror;
 using Mirror.FizzySteam;
 using TMPro;
+using Unity.Burst;
 
 namespace Scripts.UI
 {
+    [BurstCompile]
     public class MenuManager : MonoBehaviour
     {
         [SerializeField] private CanvasGroup currentTab;
@@ -31,15 +33,15 @@ namespace Scripts.UI
             ApplyCanvasGroup(GetCanvasGroupStruct(currentTab));
 
             steamTransport = NetworkManager.singleton.GetComponent<FizzyFacepunch>();
-            localTransport = NetworkManager.singleton.GetComponent<KcpTransport>();
+            localTransport = NetworkManager.singleton.GetComponent<ThreadedKcpTransport>();
         }
 
         #region Networking
         private FizzyFacepunch steamTransport;
-        private KcpTransport localTransport;
+        private ThreadedKcpTransport localTransport;
 
         public void SetAddress(string address) => NetworkManager.singleton.networkAddress = address;
-        public void SetPort(string port) => NetworkManager.singleton.GetComponent<KcpTransport>().Port = (ushort)int.Parse(port);
+        public void SetPort(string port) => localTransport.Port = (ushort)int.Parse(port);
         public void SetMaxConnections(float connections) => NetworkManager.singleton.maxConnections = (int)connections;
         public void SetConnectionType(int connectionType)
         {

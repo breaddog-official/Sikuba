@@ -1,12 +1,17 @@
 using TMPro;
+using Unity.Burst;
 
 namespace Scripts.Settings
 {
+    [BurstCompile]
     public class SettingUI_Dropdown : SettingUI
     {
+        TMP_Dropdown dropdown;
         private void Start()
-        {
-            GetComponent<TMP_Dropdown>().value = SettingsManager.ReadValue<int>(Index);
+        { 
+            dropdown = GetComponent<TMP_Dropdown>();
+            dropdown.value = SettingsManager.ReadValue<int>(Index);
+            dropdown.onValueChanged.Invoke(dropdown.value);
         }
         public void ChangeSettingInt(int value)
         {

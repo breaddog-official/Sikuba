@@ -1,14 +1,20 @@
-using UnityEngine;
-
-public abstract class PlayerPrefsSetter<T> : MonoBehaviour
+namespace Scripts.UI.PlayerPrefs
 {
-    [field: SerializeField] public string Key { get; protected set; }
-    [field: SerializeField] public T DefaultValue { get; protected set; }
-
-    public T Value { get; protected set; }
-
-    protected virtual void OnValidate()
+    using Unity.Burst;
+    using UnityEngine;
+    [BurstCompile]
+    public abstract class PlayerPrefsSetter<T> : MonoBehaviour
     {
-        Value = DefaultValue;
+        [field: SerializeField] public string Key { get; protected set; }
+        [field: SerializeField] public T DefaultValue { get; protected set; }
+
+        public T Value { get; protected set; }
+
+        protected virtual void OnEnable() { Start(); }
+        protected abstract void Start();
+        protected virtual void OnValidate()
+        {
+            Value = DefaultValue;
+        }
     }
 }

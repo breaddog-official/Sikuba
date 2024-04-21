@@ -1,4 +1,5 @@
 using System;
+using Unity.Burst;
 using UnityEngine.UI;
 
 ////TODO: have updateBindingUIEvent receive a control path string, too (in addition to the device layout name)
@@ -11,6 +12,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     /// of a binding should be refreshed. It then checks whether we have an icon for the current binding
     /// and if so, replaces the default text display with an icon.
     /// </summary>
+    [BurstCompile]
     public class GamepadIcons : MonoBehaviour
     {
         public GamepadIconsStruct xbox;

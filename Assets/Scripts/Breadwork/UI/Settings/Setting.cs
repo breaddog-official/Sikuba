@@ -1,8 +1,10 @@
 using Scripts.Core;
 using System;
+using Unity.Burst;
 
 namespace Scripts.Settings
 {
+    [BurstCompile]
     [Serializable]
     public class Setting<T> : ISetting
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 using TMPro;
 using Scripts.InputManagement;
+using Unity.Burst;
 
 ////TODO: localization support
 
@@ -13,6 +14,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     /// <summary>
     /// A reusable component with a self-contained UI for rebinding a single action.
     /// </summary>
+    [BurstCompile]
     public class RebindActionUI : MonoBehaviour
     {
         /// <summary>

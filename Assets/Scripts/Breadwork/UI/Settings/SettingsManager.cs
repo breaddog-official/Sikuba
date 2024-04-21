@@ -22,20 +22,15 @@ namespace Scripts.Settings
 
         private const string SAVE_NAME = "settings";
 
-        private static bool initialized;
-
-        private void Awake()
+        private void Awake() => Instance = this;
+        private void Start() => Apply();
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        public static void Initialize()
         {
-            if (Settings == null && !initialized)
-            {
-                initialized = true;
-                Settings = new();
-                InitializeSettings();
-                Load();
-                Save();
-            }
-            Instance = this;
-            Apply();
+            Settings = new();
+            InitializeSettings();
+            Load();
+            Save();
         }
         /// <summary>
         /// Saves settings in file
@@ -58,6 +53,7 @@ namespace Scripts.Settings
             }
             catch (FileNotFoundException)
             {
+                Debug.Log("Settings not found. Creating...");
                 return;
             }
             for (int i = 0; i < Settings.Count; i++)
@@ -125,6 +121,8 @@ namespace Scripts.Settings
                 name = "ResolutionIndex",
                 action = (int value) =>
                 {
+                    if (value == -1) throw new Exception("Resolution is -1");
+                    
                     Resolution res = Screen.resolutions[value];
                     Screen.SetResolution(res.width, res.height, Screen.fullScreenMode, res.refreshRateRatio);
                 },
@@ -134,8 +132,7 @@ namespace Scripts.Settings
                 name = "Fullscreen",
                 action = (int value) =>
                 {
-                    Screen.SetResolution(Screen.currentResolution.width,
-                        Screen.currentResolution.height, (FullScreenMode)value, Screen.currentResolution.refreshRateRatio);
+                    Screen.fullScreenMode = (FullScreenMode)value;
                 },
             });
             Settings.Add(new Setting<int>(defaultValue: (int)RefreshRate.None)

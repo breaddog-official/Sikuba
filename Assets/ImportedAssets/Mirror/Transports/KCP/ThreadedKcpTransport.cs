@@ -141,7 +141,7 @@ namespace kcp2k
         // Do not change this back to using Application.platform
         // because that doesn't work in the Editor!
         public override bool Available() =>
-                    Application.platform != RuntimePlatform.WebGLPlayer && enabled;
+                    Application.platform != RuntimePlatform.WebGLPlayer && isActiveAndEnabled;
 
         protected override void ThreadedClientConnect(string address) => client.Connect(address, Port);
         protected override void ThreadedClientConnect(Uri uri)
