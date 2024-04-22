@@ -1,12 +1,11 @@
 using Mirror;
-using NTC.Pool;
 using Unity.Burst;
 using UnityEngine;
 
 namespace Scripts.Gameplay
 {
     [BurstCompile]
-    public class Bullet : NetworkBehaviour, ISpawnable
+    public class Bullet : NetworkBehaviour
     {
         [SerializeField] protected float speed = 10.0f;
         [SerializeField] protected float lifetime = 5.0f;
@@ -18,28 +17,31 @@ namespace Scripts.Gameplay
         protected int curHits;
         protected Rigidbody _rb;
 
-        public void OnSpawn()
+        private void Start()
         {
             curHits = hits;
             _rb = GetComponent<Rigidbody>();
+        }
+        public override void OnStartServer()
+        {
             Invoke(nameof(Destroy), lifetime);
         }
+        [Server]
         private void Destroy()
         {
-            NightPool.Despawn(this);
-            NetworkServer.UnSpawn(gameObject);
+            NetworkServer.Destroy(gameObject);
         }
         private void FixedUpdate()
         {
             _rb.MovePosition(Vector3.Lerp(transform.position, transform.position + transform.forward, Time.fixedDeltaTime * speed));
         }
+        [ServerCallback]
         private void OnTriggerEnter(Collider other)
         {
             if ((layerMask & (1 << other.gameObject.layer)) != 0)
             {
-                if (TryGetComponent(out IDamageable damageable))
+                if (other.TryGetComponent(out IDamageable damageable))
                 {
-                    Debug.Log("hurt");
                     damageable.Hurt(damage);
                 }
                 curHits--;

@@ -32,20 +32,15 @@ public class PlayerGun : NetworkBehaviour
         if (!_player.isLocalPlayer && (NetworkManager.singleton ? NetworkManager.singleton.isNetworkActive : false)) return;
         Shoot();
     }
-    [Command, Server]
+    [Command]
     private void Shoot()
     {
         if (!CanShoot) return;
 
         CanShoot = false;
         Invoke(nameof(SetCanShoot), shootDelay);
-        PerformShoot();
-    }
-    [ClientRpc]
-    private void PerformShoot()
-    {
-        Bullet spawnedBullet = NightPool.Spawn(bulletPrafab, shootPoint.position, shootPoint.rotation);
-        NetworkServer.Spawn(spawnedBullet.gameObject);
+        Bullet bullet =  Instantiate(bulletPrafab, shootPoint.position, shootPoint.rotation);
+        NetworkServer.Spawn(bullet.gameObject, connectionToClient);
     }
     private void SetCanShoot() => CanShoot = true;
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolPresets:
   - _name: Bullets
-    _enabled: 1
+    _enabled: 0
     _prefab: {fileID: 8176816477770387688, guid: 8d3d59a9ca232614987072225140ff9e,
       type: 3}
     _behaviourOnCapacityReached: 2

@@ -186,7 +186,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.05
-  clientAuthority: 0
+  clientAuthority: 1
   animator: {fileID: 6679419164360471550}
 --- !u!114 &4814015360643970655
 MonoBehaviour:
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncDirection: 0
   syncMode: 0
-  syncInterval: 0
+  syncInterval: 0.1
   <Health>k__BackingField: 100
 --- !u!114 &3744895511530687436
 MonoBehaviour:
