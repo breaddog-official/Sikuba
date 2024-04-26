@@ -218,7 +218,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncDirection: 0
   syncMode: 0
-  syncInterval: 0
+  syncInterval: 1
+  sync: 1
+  defaultBuffer: 0
+  bufferSpeed: 5
   MovementSpeed: 5
   MovementAcceleration: 0.15
   RotationSpeed: 15

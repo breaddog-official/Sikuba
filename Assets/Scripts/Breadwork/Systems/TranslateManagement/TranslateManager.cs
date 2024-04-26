@@ -14,7 +14,7 @@ namespace Scripts.TranslateManagement
         public static SystemLanguage GameLanguage { get; private set; }
         public static event Action GameLanguageChanged;
 
-        public static Translation Translation { get; private set; }
+        public static Translation Translation { get; private set; } = new();
 
         public static void Initialize() => ChangeLanguage(GetSystemLanguage(), false);
         private static void LoadLanguage()
