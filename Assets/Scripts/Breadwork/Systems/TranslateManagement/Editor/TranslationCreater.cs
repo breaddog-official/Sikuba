@@ -19,8 +19,10 @@ namespace Scripts.TranslateManagement
         private List<string> filesInLanguageFolder = new List<string>();
 
         private readonly GUILayoutOption buttonWidth = GUILayout.Width(100.0f);
-        private readonly FieldInfo[] translationFields = typeof(Translation).GetFields();
+        private readonly bool PRINT_DEBUG_INFO = false;
 
+        private FieldInfo[] translationFields = typeof(Translation).GetFields();
+        #region GUI
         [MenuItem("Services/Transltation Creater")]
         public static void OpenWindow()
         {
@@ -39,13 +41,20 @@ namespace Scripts.TranslateManagement
             dropdownLanguage = (SystemLanguage)EditorGUILayout.EnumPopup("Currently edited language:", dropdownLanguage);
             if (currentLanguage != dropdownLanguage && !TranslationCreaterSaveChangesWindow.HasInstance)
             {
-                TranslationCreaterSaveChangesWindow window = TranslationCreaterSaveChangesWindow.OpenWindow(currentLanguage);
-
-                window.OnApply += SaveChanges;
-                window.OnDiscard += DiscardChanges;
+                if (ExistsTranslation(currentLanguage) && ExistsTranslation(dropdownLanguage))
+                {
+                    if (!CompareTranslations(currentTranslation, LoadTranslation(currentLanguage)))
+                    {
+                        TranslationCreaterSaveChangesWindow window = TranslationCreaterSaveChangesWindow.OpenWindow(currentLanguage);
+                        window.OnApply += SaveChanges;
+                        window.OnDiscard += DiscardChanges;
+                    }
+                    else DiscardChanges();
+                }
+                else DiscardChanges();
             }
 
-            bool tryLoadTranslationResult = TryLoadTranslation();
+            bool tryLoadTranslationResult = ExistsTranslation(currentLanguage);
             if (GUILayout.Button(tryLoadTranslationResult ? "Load" : "Save", buttonWidth))
             {
                 UpdateLanguage(tryLoadTranslationResult);
@@ -86,6 +95,32 @@ namespace Scripts.TranslateManagement
 
             RenderTranslation(currentTranslation);
         }
+        private void RenderList(List<string> list)
+        {
+            GUILayout.BeginScrollView(new Vector2(0.0f, 0.0f));
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                GUILayout.Label($"{i}:");
+                list[i] = EditorGUILayout.TextField(list[i]);
+            }
+
+            GUILayout.EndScrollView();
+        }
+        private void RenderTranslation(Translation translation)
+        {
+            GUILayout.BeginScrollView(new Vector2(0.0f, 0.0f));
+
+            for (int i = 0; i < translationFields.Length; i++)
+            {
+                GUILayout.Label($"{translationFields[i].Name}:");
+                translationFields[i].SetValue(translation, EditorGUILayout.TextField((string)translationFields[i].GetValue(translation)));
+            }
+
+            GUILayout.EndScrollView();
+        }
+        #endregion
+        #region SaveManagement
         public override void DiscardChanges()
         {
             base.DiscardChanges();
@@ -101,10 +136,10 @@ namespace Scripts.TranslateManagement
         }
         private void UpdateLanguage()
         {
-            if (TryLoadTranslation())
+            if (ExistsTranslation(currentLanguage))
                 currentTranslation = LoadTranslation();
             else
-                SaveTranslation();
+                currentTranslation = new();
 
             UpdateFilesInLanguageFolder();
         }
@@ -128,33 +163,21 @@ namespace Scripts.TranslateManagement
                 filesInLanguageFolder.Add(Path.GetFileNameWithoutExtension(s));
             }
         }
-        private void RenderList(List<string> list)
+        private bool ExistsTranslation(SystemLanguage language)
         {
-            GUILayout.BeginScrollView(new Vector2(0.0f, 0.0f));
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                GUILayout.Label($"{i}:");
-                list[i] = EditorGUILayout.TextField(list[i]);
-            }
-
-            GUILayout.EndScrollView();
+            return SaveManager.ExistsFile(SaveManager.CreatePath(Enum.GetName(typeof(SystemLanguage), language), TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication));
         }
-        private void RenderTranslation(Translation translation)
+        private bool CompareTranslations(Translation first, Translation second)
         {
-            GUILayout.BeginScrollView(new Vector2(0.0f, 0.0f));
-
+            translationFields = typeof(Translation).GetFields();
             for (int i = 0; i < translationFields.Length; i++)
             {
-                GUILayout.Label($"{translationFields[i].Name}:");
-                translationFields[i].SetValue(currentTranslation, EditorGUILayout.TextField((string)translationFields[i].GetValue(currentTranslation)));
+                if (!Equals(translationFields[i].GetValue(first), translationFields[i].GetValue(second)))
+                {
+                    return false;
+                }
             }
-
-            GUILayout.EndScrollView();
-        }
-        private bool TryLoadTranslation()
-        {
-            return SaveManager.ExistsFile(SaveManager.CreatePath(Enum.GetName(typeof(SystemLanguage), currentLanguage), TranslateManager.LANGUAGES_SUBFOLDER, SaveManager.GetSaveSystem(SaveManager.Savers.YAML)));
+            return true;
         }
         private Translation LoadTranslation(SystemLanguage language = SystemLanguage.Unknown)
         {
@@ -162,8 +185,8 @@ namespace Scripts.TranslateManagement
                 language = currentLanguage;
 
             Translation loadedTranslation = SaveManager.LoadFromFile<Translation>
-                (Enum.GetName(typeof(SystemLanguage), currentLanguage), SaveManager.Savers.Json, TranslateManager.LANGUAGES_SUBFOLDER, SaveManager.UpdateSensitivity.UpdateWithApplication);
-            Debug.Log($"{language} was loaded.");
+                (Enum.GetName(typeof(SystemLanguage), currentLanguage), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+            if (PRINT_DEBUG_INFO) Debug.Log($"{language} was loaded.");
             return loadedTranslation;
         }
         private void SaveTranslation(SystemLanguage language = SystemLanguage.Unknown)
@@ -171,9 +194,9 @@ namespace Scripts.TranslateManagement
             if (language == SystemLanguage.Unknown)
                 language = currentLanguage;
 
-            SaveManager.SaveToFile(currentTranslation, Enum.GetName(typeof(SystemLanguage), currentLanguage),
-                SaveManager.Savers.YAML, TranslateManager.LANGUAGES_SUBFOLDER, SaveManager.UpdateSensitivity.UpdateWithApplication);
-            Debug.Log($"{language} was saved.");
+            SaveManager.SaveToFile(currentTranslation, Enum.GetName(typeof(SystemLanguage), currentLanguage), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+            if (PRINT_DEBUG_INFO) Debug.Log($"{language} was saved.");
         }
+        #endregion
     }
 }
