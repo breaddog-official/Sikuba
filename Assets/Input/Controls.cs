@@ -30,18 +30,18 @@ namespace Scripts.InputManagement
             ""id"": ""cdf63835-ad9a-4822-8b36-e0911ceced9f"",
             ""actions"": [
                 {
-                    ""name"": ""Shoot"",
-                    ""type"": ""Button"",
-                    ""id"": ""450b7706-1cf5-4716-8d7f-c35418fef57f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Point"",
                     ""type"": ""Value"",
                     ""id"": ""14bf3ef6-76b4-41d6-afdd-e9ad06735b0a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PointDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""bb07f8b0-98e1-42d5-ab79-222be6c4866d"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -57,6 +57,42 @@ namespace Scripts.InputManagement
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""b0811d32-fff8-4af4-8547-bbded68ca53e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""887ee1b5-a16c-4881-a66e-0a9166232fa4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""67189fcb-deef-42ba-ada2-c4f302fce023"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""450b7706-1cf5-4716-8d7f-c35418fef57f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Menu"",
                     ""type"": ""Button"",
                     ""id"": ""21de089f-c634-47ab-9f18-5d31035cac81"",
@@ -67,6 +103,72 @@ namespace Scripts.InputManagement
                 }
             ],
             ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""a02aae0d-2fa4-454a-8bba-d53df079e4a5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""709155ec-3dc2-400c-99cf-d68ca4c557b8"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1058f08a-5565-4689-b96a-20c5e41a4081"",
+                    ""path"": ""<Pointer>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard;Gamepad"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9e06f8d5-59d4-4569-a2d5-427381e48301"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9839cc86-b0a8-470e-ad07-13e3fa5acf69"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30e5f93c-cd06-440a-a8f3-0c5c3620d97e"",
+                    ""path"": ""<Pointer>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad;Keyboard"",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
                 {
                     ""name"": ""WASD"",
                     ""id"": ""0f8a8858-7411-42d8-8d9e-1cca1bbab3e5"",
@@ -201,67 +303,78 @@ namespace Scripts.InputManagement
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a02aae0d-2fa4-454a-8bba-d53df079e4a5"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""e6b031b5-7eb9-4ea3-bbe8-65657c9f9801"",
+                    ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Menu"",
+                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""709155ec-3dc2-400c-99cf-d68ca4c557b8"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""id"": ""c6ba5e50-9b5e-4b1b-ad33-a036580d6728"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Menu"",
+                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""30e5f93c-cd06-440a-a8f3-0c5c3620d97e"",
-                    ""path"": ""<Pointer>/position"",
+                    ""id"": ""764001e2-6cb7-45f8-820f-4a6270952ccd"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e062d04-173b-4bd2-85cb-bbfca98d5511"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ca1ada4-873e-47fe-a316-44e8ac50c67e"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd6322ed-cb74-4966-aa02-f2301c515cf1"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc56d2ee-c1d4-46f9-8355-1d5083908a82"",
+                    ""path"": ""<Pointer>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad;Keyboard"",
-                    ""action"": ""Point"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1058f08a-5565-4689-b96a-20c5e41a4081"",
-                    ""path"": ""<Pointer>/press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard;Gamepad"",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9e06f8d5-59d4-4569-a2d5-427381e48301"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9839cc86-b0a8-470e-ad07-13e3fa5acf69"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Shoot"",
+                    ""action"": ""PointDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -751,9 +864,13 @@ namespace Scripts.InputManagement
 }");
             // Game
             m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
-            m_Game_Shoot = m_Game.FindAction("Shoot", throwIfNotFound: true);
             m_Game_Point = m_Game.FindAction("Point", throwIfNotFound: true);
+            m_Game_PointDelta = m_Game.FindAction("PointDelta", throwIfNotFound: true);
             m_Game_Move = m_Game.FindAction("Move", throwIfNotFound: true);
+            m_Game_Crouch = m_Game.FindAction("Crouch", throwIfNotFound: true);
+            m_Game_Jump = m_Game.FindAction("Jump", throwIfNotFound: true);
+            m_Game_Sprint = m_Game.FindAction("Sprint", throwIfNotFound: true);
+            m_Game_Shoot = m_Game.FindAction("Shoot", throwIfNotFound: true);
             m_Game_Menu = m_Game.FindAction("Menu", throwIfNotFound: true);
             // Menu
             m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
@@ -825,17 +942,25 @@ namespace Scripts.InputManagement
         // Game
         private readonly InputActionMap m_Game;
         private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
-        private readonly InputAction m_Game_Shoot;
         private readonly InputAction m_Game_Point;
+        private readonly InputAction m_Game_PointDelta;
         private readonly InputAction m_Game_Move;
+        private readonly InputAction m_Game_Crouch;
+        private readonly InputAction m_Game_Jump;
+        private readonly InputAction m_Game_Sprint;
+        private readonly InputAction m_Game_Shoot;
         private readonly InputAction m_Game_Menu;
         public struct GameActions
         {
             private @Controls m_Wrapper;
             public GameActions(@Controls wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Shoot => m_Wrapper.m_Game_Shoot;
             public InputAction @Point => m_Wrapper.m_Game_Point;
+            public InputAction @PointDelta => m_Wrapper.m_Game_PointDelta;
             public InputAction @Move => m_Wrapper.m_Game_Move;
+            public InputAction @Crouch => m_Wrapper.m_Game_Crouch;
+            public InputAction @Jump => m_Wrapper.m_Game_Jump;
+            public InputAction @Sprint => m_Wrapper.m_Game_Sprint;
+            public InputAction @Shoot => m_Wrapper.m_Game_Shoot;
             public InputAction @Menu => m_Wrapper.m_Game_Menu;
             public InputActionMap Get() { return m_Wrapper.m_Game; }
             public void Enable() { Get().Enable(); }
@@ -846,15 +971,27 @@ namespace Scripts.InputManagement
             {
                 if (instance == null || m_Wrapper.m_GameActionsCallbackInterfaces.Contains(instance)) return;
                 m_Wrapper.m_GameActionsCallbackInterfaces.Add(instance);
-                @Shoot.started += instance.OnShoot;
-                @Shoot.performed += instance.OnShoot;
-                @Shoot.canceled += instance.OnShoot;
                 @Point.started += instance.OnPoint;
                 @Point.performed += instance.OnPoint;
                 @Point.canceled += instance.OnPoint;
+                @PointDelta.started += instance.OnPointDelta;
+                @PointDelta.performed += instance.OnPointDelta;
+                @PointDelta.canceled += instance.OnPointDelta;
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
                 @Menu.started += instance.OnMenu;
                 @Menu.performed += instance.OnMenu;
                 @Menu.canceled += instance.OnMenu;
@@ -862,15 +999,27 @@ namespace Scripts.InputManagement
 
             private void UnregisterCallbacks(IGameActions instance)
             {
-                @Shoot.started -= instance.OnShoot;
-                @Shoot.performed -= instance.OnShoot;
-                @Shoot.canceled -= instance.OnShoot;
                 @Point.started -= instance.OnPoint;
                 @Point.performed -= instance.OnPoint;
                 @Point.canceled -= instance.OnPoint;
+                @PointDelta.started -= instance.OnPointDelta;
+                @PointDelta.performed -= instance.OnPointDelta;
+                @PointDelta.canceled -= instance.OnPointDelta;
                 @Move.started -= instance.OnMove;
                 @Move.performed -= instance.OnMove;
                 @Move.canceled -= instance.OnMove;
+                @Crouch.started -= instance.OnCrouch;
+                @Crouch.performed -= instance.OnCrouch;
+                @Crouch.canceled -= instance.OnCrouch;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
+                @Sprint.started -= instance.OnSprint;
+                @Sprint.performed -= instance.OnSprint;
+                @Sprint.canceled -= instance.OnSprint;
+                @Shoot.started -= instance.OnShoot;
+                @Shoot.performed -= instance.OnShoot;
+                @Shoot.canceled -= instance.OnShoot;
                 @Menu.started -= instance.OnMenu;
                 @Menu.performed -= instance.OnMenu;
                 @Menu.canceled -= instance.OnMenu;
@@ -1005,9 +1154,13 @@ namespace Scripts.InputManagement
         }
         public interface IGameActions
         {
-            void OnShoot(InputAction.CallbackContext context);
             void OnPoint(InputAction.CallbackContext context);
+            void OnPointDelta(InputAction.CallbackContext context);
             void OnMove(InputAction.CallbackContext context);
+            void OnCrouch(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
+            void OnSprint(InputAction.CallbackContext context);
+            void OnShoot(InputAction.CallbackContext context);
             void OnMenu(InputAction.CallbackContext context);
         }
         public interface IMenuActions

@@ -26,7 +26,6 @@ public class PlayerGun : NetworkBehaviour
     {
         InputManager.Controls.Game.Shoot.started -= PreShoot;
     }
-    [Client]
     private void PreShoot(InputAction.CallbackContext ctx)
     {
         if (!_player.isLocalPlayer && (NetworkManager.singleton ? NetworkManager.singleton.isNetworkActive : false)) return;

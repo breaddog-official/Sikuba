@@ -6,18 +6,18 @@
             "id": "cdf63835-ad9a-4822-8b36-e0911ceced9f",
             "actions": [
                 {
-                    "name": "Shoot",
-                    "type": "Button",
-                    "id": "450b7706-1cf5-4716-8d7f-c35418fef57f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Point",
                     "type": "Value",
                     "id": "14bf3ef6-76b4-41d6-afdd-e9ad06735b0a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PointDelta",
+                    "type": "Value",
+                    "id": "bb07f8b0-98e1-42d5-ab79-222be6c4866d",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -33,6 +33,42 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "b0811d32-fff8-4af4-8547-bbded68ca53e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "887ee1b5-a16c-4881-a66e-0a9166232fa4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "67189fcb-deef-42ba-ada2-c4f302fce023",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "450b7706-1cf5-4716-8d7f-c35418fef57f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Menu",
                     "type": "Button",
                     "id": "21de089f-c634-47ab-9f18-5d31035cac81",
@@ -43,6 +79,72 @@
                 }
             ],
             "bindings": [
+                {
+                    "name": "",
+                    "id": "a02aae0d-2fa4-454a-8bba-d53df079e4a5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "709155ec-3dc2-400c-99cf-d68ca4c557b8",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1058f08a-5565-4689-b96a-20c5e41a4081",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard;Gamepad",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9e06f8d5-59d4-4569-a2d5-427381e48301",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9839cc86-b0a8-470e-ad07-13e3fa5acf69",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30e5f93c-cd06-440a-a8f3-0c5c3620d97e",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad;Keyboard",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
                 {
                     "name": "WASD",
                     "id": "0f8a8858-7411-42d8-8d9e-1cca1bbab3e5",
@@ -177,67 +279,78 @@
                 },
                 {
                     "name": "",
-                    "id": "a02aae0d-2fa4-454a-8bba-d53df079e4a5",
-                    "path": "<Keyboard>/escape",
+                    "id": "e6b031b5-7eb9-4ea3-bbe8-65657c9f9801",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Menu",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "709155ec-3dc2-400c-99cf-d68ca4c557b8",
-                    "path": "<Gamepad>/start",
+                    "id": "c6ba5e50-9b5e-4b1b-ad33-a036580d6728",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Menu",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "30e5f93c-cd06-440a-a8f3-0c5c3620d97e",
-                    "path": "<Pointer>/position",
+                    "id": "764001e2-6cb7-45f8-820f-4a6270952ccd",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5e062d04-173b-4bd2-85cb-bbfca98d5511",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ca1ada4-873e-47fe-a316-44e8ac50c67e",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd6322ed-cb74-4966-aa02-f2301c515cf1",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc56d2ee-c1d4-46f9-8355-1d5083908a82",
+                    "path": "<Pointer>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad;Keyboard",
-                    "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1058f08a-5565-4689-b96a-20c5e41a4081",
-                    "path": "<Pointer>/press",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard;Gamepad",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9e06f8d5-59d4-4569-a2d5-427381e48301",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9839cc86-b0a8-470e-ad07-13e3fa5acf69",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Shoot",
+                    "action": "PointDelta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

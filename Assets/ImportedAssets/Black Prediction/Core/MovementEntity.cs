@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using NaughtyAttributes;
 
 namespace Black.ClientSidePrediction
 {
@@ -13,12 +14,10 @@ namespace Black.ClientSidePrediction
             FixedUpdate,
             LateUpdate,
         }
-
-        [SerializeField, SyncVar] private PredictionSync sync;
-        [SerializeField] private byte defaultBuffer = 2;
-#pragma warning disable CS0414
-        [SerializeField] private byte bufferSpeed = 5;
-#pragma warning restore CS0414
+        [Header("Prediction")]
+        [SerializeField, BoxGroup("Prediction")] private PredictionSync sync;
+        [SerializeField, BoxGroup("Prediction")] private byte defaultBuffer = 2;
+        //[SerializeField, BoxGroup("Prediction")] private byte bufferSpeed = 5;
 
         private float nextUpdate;
         private float updateRate = 0.016f;
@@ -33,6 +32,15 @@ namespace Black.ClientSidePrediction
         public abstract ServerResult GetResult();
         protected abstract void SetResult(ServerResult result);
         public abstract void ApplyMovement();
+
+        public override void OnStartAuthority()
+        {
+            if (!isServer)
+                if (TryGetComponent(out NetworkTransformBase transformBase))
+                    transformBase.enabled = false;
+
+            base.OnStartAuthority();
+        }
 
         protected virtual void Start()
         {

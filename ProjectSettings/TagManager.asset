@@ -3,16 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ledge
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Static
+  - 
   - Water
   - UI
   - Post-Processing
-  - Player
+  - 
   - Enemy
   - Projectile
   - 
@@ -21,10 +22,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - whatIsPlayer
+  - whatIsWall
+  - whatIsGround
+  - whatIsLedge
   - 
   - 
   - 

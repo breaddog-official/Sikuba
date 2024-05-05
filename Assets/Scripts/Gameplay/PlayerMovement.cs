@@ -10,10 +10,11 @@ namespace Scripts.Gameplay
     [BurstCompile]
     public class PlayerMovement : MovementEntity
     {
+        [Header("General")]
         [SerializeField, BoxGroup("General")] private float MovementSpeed = 5.0f;
         [SerializeField, BoxGroup("General")] private float MovementAcceleration = 0.2f;
         [SerializeField, BoxGroup("General")] private float RotationSpeed = 2.0f;
-
+        [Header("MouseRotation")]
         [SerializeField, BoxGroup("MouseRotation")] private LayerMask ignoreLayers;
 
         private Camera _camera;
@@ -36,10 +37,6 @@ namespace Scripts.Gameplay
             _rb = GetComponentInChildren<Rigidbody>();
             _camera = MainCamera.Instance.Camera;
 
-            if (!isServer)
-                if (TryGetComponent(out NetworkTransformBase transformBase))
-                    transformBase.enabled = false;
-
             base.Start();
         }
         public override void OnStartAuthority()
@@ -48,6 +45,8 @@ namespace Scripts.Gameplay
 
             _player = GetComponent<Player>();
             _anim = GetComponentInChildren<Animator>();
+
+            base.OnStartAuthority();
         }
         protected override void LateUpdate()
         {
