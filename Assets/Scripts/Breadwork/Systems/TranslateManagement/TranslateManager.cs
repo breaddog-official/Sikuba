@@ -11,7 +11,7 @@ namespace Scripts.TranslateManagement
     {
         public const string LANGUAGES_SUBFOLDER = "Languages";
 
-        public static SystemLanguage GameLanguage { get; private set; }
+        public static ApplicationLanguage GameLanguage { get; private set; }
         public static event Action GameLanguageChanged;
 
         public static Translation Translation { get; private set; } = new();
@@ -20,22 +20,22 @@ namespace Scripts.TranslateManagement
         private static void LoadLanguage()
         {
             Translation = SaveManager.LoadFromFile<Translation>
-                (Enum.GetName(typeof(SystemLanguage), GameLanguage), SaveManager.Savers.Json, LANGUAGES_SUBFOLDER, SaveManager.UpdateSensitivity.UpdateWithApplication);
+                (Enum.GetName(typeof(ApplicationLanguage), GameLanguage), SaveManager.Savers.Json, LANGUAGES_SUBFOLDER, SaveManager.UpdateSensitivity.UpdateWithApplication);
         }
         /// <summary>
         /// Returns the system language or, if debugging is enabled, returns English
         /// </summary>
-        public static SystemLanguage GetSystemLanguage()
+        public static ApplicationLanguage GetSystemLanguage()
         {
             if (GameManager.GameDataConfig.IsDebug)
                 return GameManager.GameDataConfig.DefaultLanguage;
             else
-                return Application.systemLanguage;
+                return LanguageCodesConverter.ConvertToApplicationLanguage(Application.systemLanguage);
         }
         /// <summary>
         /// Sets new language
         /// </summary>
-        public static void ChangeLanguage(SystemLanguage newLanguage, bool withInvoke = true)
+        public static void ChangeLanguage(ApplicationLanguage newLanguage, bool withInvoke = true)
         {
             if (GameLanguage != newLanguage)
             {

@@ -25,8 +25,15 @@ namespace Scripts.UI
         [SerializeField, BoxGroup("ConnectionMenu")] private GameObject[] PortInputFields;
 
         private bool isBusy;
-
-        public void Quit() => Application.Quit();
+        
+        public void Quit()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+        }
         public void ChangeScene(int scene) => SceneManager.LoadScene(scene);
         private void Start()
         {

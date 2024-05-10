@@ -46,7 +46,7 @@ namespace NaughtyAttributes.Editor
             {
                 DrawSerializedProperties();
             }
-
+            
             DrawNonSerializedFields();
             DrawNativeProperties();
             DrawButtons();

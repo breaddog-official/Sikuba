@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3912e0c767c410f4fa1f74d08325436e, type: 3}
   m_Name: Translation_Language
   m_EditorClassIdentifier: 
-  currentLanguage: 8
+  currentLanguage: 9
   Translation:
-    menu_play: Spil
-    menu_options: Muligheder
-    menu_quit: Afslut
+    menu_play: 
+    menu_options: 
+    menu_quit: 

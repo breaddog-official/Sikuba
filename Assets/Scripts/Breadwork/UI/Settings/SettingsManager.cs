@@ -153,7 +153,7 @@ namespace Scripts.Settings
                 name = "Language",
                 action = (int value) =>
                 {
-                    TranslateManager.ChangeLanguage((SystemLanguage)value);
+                    TranslateManager.ChangeLanguage((ApplicationLanguage)value);
                 },
             });
         }

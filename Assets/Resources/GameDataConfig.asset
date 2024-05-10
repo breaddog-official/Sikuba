@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameDataConfig
   m_EditorClassIdentifier: 
   IsDebug: 1
-  DefaultLanguage: 30
+  DefaultLanguage: 28
   SoundMixer: {fileID: 24300002, guid: dbc6af2f43f6d06449761a873326bce7, type: 2}
   MusicMixer: {fileID: 24300002, guid: 14535170d7965bd48b50d4480ff84e27, type: 2}
   IsPooling: 1

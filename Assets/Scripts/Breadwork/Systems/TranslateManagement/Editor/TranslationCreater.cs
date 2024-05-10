@@ -12,7 +12,7 @@ namespace Scripts.TranslateManagement
     [BurstCompile]
     public class TranslationCreater : EditorWindow
     {
-        private SystemLanguage currentLanguage = SystemLanguage.English;
+        private ApplicationLanguage currentLanguage = ApplicationLanguage.English;
         private Translation currentTranslation;
 
         private bool showAvailableLanguages = true;
@@ -34,11 +34,12 @@ namespace Scripts.TranslateManagement
             dropdownLanguage = currentLanguage;
         }
 
-        SystemLanguage dropdownLanguage;
+        Vector2 renderLanguagesScrollView = new Vector2(0.0f, 0.0f);
+        ApplicationLanguage dropdownLanguage;
         private void OnGUI()
         {
             EditorGUILayout.BeginHorizontal();
-            dropdownLanguage = (SystemLanguage)EditorGUILayout.EnumPopup("Currently edited language:", dropdownLanguage);
+            dropdownLanguage = (ApplicationLanguage)EditorGUILayout.EnumPopup("Currently edited language:", dropdownLanguage);
             if (currentLanguage != dropdownLanguage && !TranslationCreaterSaveChangesWindow.HasInstance)
             {
                 if (ExistsTranslation(currentLanguage) && ExistsTranslation(dropdownLanguage))
@@ -82,10 +83,12 @@ namespace Scripts.TranslateManagement
                 EditorGUILayout.EndHorizontal();
                 GUILayout.Space(10.0f);
 
+                renderLanguagesScrollView = GUILayout.BeginScrollView(renderLanguagesScrollView);
                 foreach (string s in filesInLanguageFolder)
                 {
                     GUILayout.Label(s);
                 }
+                GUILayout.EndScrollView();
                 GUILayout.Space(10.0f);
             }
             else
@@ -97,7 +100,7 @@ namespace Scripts.TranslateManagement
         }
         private void RenderList(List<string> list)
         {
-            GUILayout.BeginScrollView(new Vector2(0.0f, 0.0f));
+            renderTranlsationScrollView = GUILayout.BeginScrollView(renderTranlsationScrollView);
 
             for (int i = 0; i < list.Count; i++)
             {
@@ -107,9 +110,10 @@ namespace Scripts.TranslateManagement
 
             GUILayout.EndScrollView();
         }
+        Vector2 renderTranlsationScrollView = new Vector2(0.0f, 0.0f);
         private void RenderTranslation(Translation translation)
         {
-            GUILayout.BeginScrollView(new Vector2(0.0f, 0.0f));
+            renderTranlsationScrollView = GUILayout.BeginScrollView(renderTranlsationScrollView);
 
             for (int i = 0; i < translationFields.Length; i++)
             {
@@ -163,9 +167,9 @@ namespace Scripts.TranslateManagement
                 filesInLanguageFolder.Add(Path.GetFileNameWithoutExtension(s));
             }
         }
-        private bool ExistsTranslation(SystemLanguage language)
+        private bool ExistsTranslation(ApplicationLanguage language)
         {
-            return SaveManager.ExistsFile(SaveManager.CreatePath(Enum.GetName(typeof(SystemLanguage), language), TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication));
+            return SaveManager.ExistsFile(SaveManager.CreatePath(Enum.GetName(typeof(ApplicationLanguage), language), TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication));
         }
         private bool CompareTranslations(Translation first, Translation second)
         {
@@ -179,22 +183,28 @@ namespace Scripts.TranslateManagement
             }
             return true;
         }
-        private Translation LoadTranslation(SystemLanguage language = SystemLanguage.Unknown)
+        private Translation LoadTranslation()
         {
-            if (language == SystemLanguage.Unknown)
-                language = currentLanguage;
-
             Translation loadedTranslation = SaveManager.LoadFromFile<Translation>
-                (Enum.GetName(typeof(SystemLanguage), currentLanguage), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+                (Enum.GetName(typeof(ApplicationLanguage), currentLanguage), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+            if (PRINT_DEBUG_INFO) Debug.Log($"{currentLanguage} was loaded.");
+            return loadedTranslation;
+        }
+        private Translation LoadTranslation(ApplicationLanguage language)
+        {
+            Translation loadedTranslation = SaveManager.LoadFromFile<Translation>
+                (Enum.GetName(typeof(ApplicationLanguage), language), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
             if (PRINT_DEBUG_INFO) Debug.Log($"{language} was loaded.");
             return loadedTranslation;
         }
-        private void SaveTranslation(SystemLanguage language = SystemLanguage.Unknown)
+        private void SaveTranslation()
         {
-            if (language == SystemLanguage.Unknown)
-                language = currentLanguage;
-
-            SaveManager.SaveToFile(currentTranslation, Enum.GetName(typeof(SystemLanguage), currentLanguage), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+            SaveManager.SaveToFile(currentTranslation, Enum.GetName(typeof(ApplicationLanguage), currentLanguage), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+            if (PRINT_DEBUG_INFO) Debug.Log($"{currentLanguage} was saved.");
+        }
+        private void SaveTranslation(ApplicationLanguage language)
+        {
+            SaveManager.SaveToFile(currentTranslation, Enum.GetName(typeof(ApplicationLanguage), language), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
             if (PRINT_DEBUG_INFO) Debug.Log($"{language} was saved.");
         }
         #endregion

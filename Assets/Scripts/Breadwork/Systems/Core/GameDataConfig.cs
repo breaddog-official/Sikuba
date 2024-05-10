@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using Scripts.TranslateManagement;
 using Unity.Burst;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -9,7 +10,7 @@ namespace Scripts.Core
     public class GameDataConfig : ScriptableObject
     {
         [BoxGroup("Game")] public bool IsDebug;
-        [BoxGroup("Game")] public SystemLanguage DefaultLanguage = SystemLanguage.English;
+        [BoxGroup("Game")] public ApplicationLanguage DefaultLanguage = ApplicationLanguage.English;
         [BoxGroup("Audio Mixers")] public AudioMixerGroup SoundMixer;
         [BoxGroup("Audio Mixers")] public AudioMixerGroup MusicMixer;
         [BoxGroup("Audio Sources Pooling")] public bool IsPooling;
