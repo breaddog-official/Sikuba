@@ -1,0 +1,17 @@
+back: process error
+menu_play: ተፃወት
+menu_options: ኣማራጺታት
+menu_quit: ግደፍ
+menu_connection_create: ፍጠር
+menu_connection_join: ተሓወስ
+menu_roomOptions_networkAddress: ኔትወርክ ኣድራሻ
+menu_roomOptions_steamId: ስቲምኣይዲ
+menu_roomOptions_port: ወደብ
+menu_roomOptions_maxConnections: ማክስ ምትእስሳራት
+menu_roomOptions_connectionType: ዓይነት ምትእስሳር
+menu_options_language: ቋንቋ
+menu_options_resolution: መፍትሒ ምሃብ
+menu_options_fullscreenMode: ምሉእ ስክሪን ሞድ
+menu_options_refreshRate: ደረጃ ምሕዳስ
+menu_options_pcConfig: ኪቦርድ & ማውስ
+menu_options_gamepadConfig: ጌምፓድ

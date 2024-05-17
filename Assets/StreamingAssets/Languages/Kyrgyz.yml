@@ -1,0 +1,17 @@
+back: process error
+menu_play: Play
+menu_options: Параметрлер
+menu_quit: Чыгыңыз
+menu_connection_create: Түзүү
+menu_connection_join: Кошулуу
+menu_roomOptions_networkAddress: Тармак дареги
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Порт
+menu_roomOptions_maxConnections: Max Connections
+menu_roomOptions_connectionType: Туташуу түрү
+menu_options_language: Тил
+menu_options_resolution: Резолюция
+menu_options_fullscreenMode: Толук экран режими
+menu_options_refreshRate: Жаңыртуу ылдамдыгы
+menu_options_pcConfig: Баскычтоп жана чычкан
+menu_options_gamepadConfig: Gamepad

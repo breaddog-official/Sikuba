@@ -1,0 +1,17 @@
+back: process error
+menu_play: hrať
+menu_options: možnosti
+menu_quit: Ukončite
+menu_connection_create: Vytvorte
+menu_connection_join: Pripojte sa
+menu_roomOptions_networkAddress: Sieťová adresa
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Maximálny počet pripojení
+menu_roomOptions_connectionType: Typ pripojenia
+menu_options_language: Jazyk
+menu_options_resolution: Rozhodnutie
+menu_options_fullscreenMode: Režim celej obrazovky
+menu_options_refreshRate: Obnovovacia frekvencia
+menu_options_pcConfig: Klávesnica a myš
+menu_options_gamepadConfig: Gamepad

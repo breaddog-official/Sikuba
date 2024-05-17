@@ -1,0 +1,17 @@
+back: ಹಿಂದೆ
+menu_play: ಪ್ಲೇ ಮಾಡಿ
+menu_options: ಆಯ್ಕೆಗಳು
+menu_quit: ಬಿಟ್ಟು
+menu_connection_create: ರಚಿಸಿ
+menu_connection_join: ಸೇರಿಕೊಳ್ಳಿ
+menu_roomOptions_networkAddress: ನೆಟ್ವರ್ಕ್ ವಿಳಾಸ
+menu_roomOptions_steamId: ಸ್ಟೀಮ್ಐಡಿ
+menu_roomOptions_port: ಬಂದರು
+menu_roomOptions_maxConnections: ಗರಿಷ್ಠ ಸಂಪರ್ಕಗಳು
+menu_roomOptions_connectionType: ಸಂಪರ್ಕದ ಪ್ರಕಾರ
+menu_options_language: ಭಾಷೆ
+menu_options_resolution: ರೆಸಲ್ಯೂಶನ್
+menu_options_fullscreenMode: ಪೂರ್ಣಪರದೆ ಮೋಡ್
+menu_options_refreshRate: ರಿಫ್ರೆಶ್ ದರ
+menu_options_pcConfig: ಕೀಬೋರ್ಡ್ ಮತ್ತು ಮೌಸ್
+menu_options_gamepadConfig: ಗೇಮ್ಪ್ಯಾಡ್

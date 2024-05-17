@@ -1,0 +1,17 @@
+back: process error
+menu_play: खेल्नु
+menu_options: विकल्पहरू
+menu_quit: छोड्नुहोस्
+menu_connection_create: सिर्जना गर्नुहोस्
+menu_connection_join: सामेल हुनुहोस्
+menu_roomOptions_networkAddress: नेटवर्क ठेगाना
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: पोर्ट
+menu_roomOptions_maxConnections: अधिकतम जडानहरू
+menu_roomOptions_connectionType: जडान प्रकार
+menu_options_language: भाषा
+menu_options_resolution: संकल्प
+menu_options_fullscreenMode: फुलस्क्रिन मोड
+menu_options_refreshRate: ताजा दर
+menu_options_pcConfig: किबोर्ड र माउस
+menu_options_gamepadConfig: गेमप्याड

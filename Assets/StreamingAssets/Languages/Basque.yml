@@ -1,0 +1,17 @@
+back: Itzuli
+menu_play: Jolastu
+menu_options: Aukerak
+menu_quit: Irten
+menu_connection_create: Sortu
+menu_connection_join: Sartu
+menu_roomOptions_networkAddress: Sareko helbidea
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Portua
+menu_roomOptions_maxConnections: Gehienezko konexioak
+menu_roomOptions_connectionType: Konexio mota
+menu_options_language: Hizkuntza
+menu_options_resolution: Ebazpena
+menu_options_fullscreenMode: Pantaila osoko modua
+menu_options_refreshRate: Freskatze tasa
+menu_options_pcConfig: Teklatua eta sagua
+menu_options_gamepadConfig: Gamepad

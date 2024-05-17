@@ -1,0 +1,17 @@
+back: process error
+menu_play: සෙල්ලම් කරන්න
+menu_options: විකල්ප
+menu_quit: ඉවත්
+menu_connection_create: නිර්මාණය කරන්න
+menu_connection_join: එක්වන්න
+menu_roomOptions_networkAddress: ජාල ලිපිනය
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: වරාය
+menu_roomOptions_maxConnections: උපරිම සම්බන්ධතා
+menu_roomOptions_connectionType: සම්බන්ධතා වර්ගය
+menu_options_language: භාෂාව
+menu_options_resolution: විභේදනය
+menu_options_fullscreenMode: සම්පූර්ණ තිර මාදිලිය
+menu_options_refreshRate: Refresh Rate
+menu_options_pcConfig: යතුරු පුවරුව සහ මූසිකය
+menu_options_gamepadConfig: Gamepad

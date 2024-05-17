@@ -1,0 +1,17 @@
+back: process error
+menu_play: Oýna
+menu_options: Görnüş
+menu_quit: Taşla
+menu_connection_create: Dörediň
+menu_connection_join: Goşul
+menu_roomOptions_networkAddress: Tor salgysy
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Maks birikmeler
+menu_roomOptions_connectionType: Baglanyş görnüşi
+menu_options_language: Dil
+menu_options_resolution: Karar
+menu_options_fullscreenMode: Doly ekran tertibi
+menu_options_refreshRate: Bahany täzeläň
+menu_options_pcConfig: Klawiatura we Syçan
+menu_options_gamepadConfig: Gamepad

@@ -1,0 +1,17 @@
+back: process error
+menu_play: Chơi
+menu_options: Tùy chọn
+menu_quit: Từ bỏ
+menu_connection_create: Tạo nên
+menu_connection_join: Tham gia
+menu_roomOptions_networkAddress: Địa chỉ mạng
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Hải cảng
+menu_roomOptions_maxConnections: Kết nối tối đa
+menu_roomOptions_connectionType: Kiểu kết nối
+menu_options_language: Ngôn ngữ
+menu_options_resolution: Nghị quyết
+menu_options_fullscreenMode: Chế độ toàn màn hình
+menu_options_refreshRate: Tốc độ làm tươi
+menu_options_pcConfig: Bàn phìm chuột
+menu_options_gamepadConfig: Tay cầm chơi game

@@ -1,0 +1,17 @@
+back: process error
+menu_play: Бозӣ
+menu_options: Имконот
+menu_quit: Истед
+menu_connection_create: Эҷод кунед
+menu_connection_join: Ҳамроҳ шавед
+menu_roomOptions_networkAddress: Суроғаи шабака
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Порт
+menu_roomOptions_maxConnections: Пайвастҳои максималӣ
+menu_roomOptions_connectionType: Навъи пайвастшавӣ
+menu_options_language: Забон
+menu_options_resolution: Резолюция
+menu_options_fullscreenMode: Ҳолати пурра экран
+menu_options_refreshRate: Меъёри навсозӣ
+menu_options_pcConfig: Клавиатура ва муш
+menu_options_gamepadConfig: Gamepad

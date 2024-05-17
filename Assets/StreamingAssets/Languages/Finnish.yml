@@ -1,0 +1,17 @@
+back: Takaisin
+menu_play: pelata
+menu_options: Vaihtoehdot
+menu_quit: Lopettaa
+menu_connection_create: Luoda
+menu_connection_join: Liittyä seuraan
+menu_roomOptions_networkAddress: Verkko-osoite
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Portti
+menu_roomOptions_maxConnections: Max liitännät
+menu_roomOptions_connectionType: Liitäntätyyppi
+menu_options_language: Kieli
+menu_options_resolution: Resoluutio
+menu_options_fullscreenMode: Koko näytön tila
+menu_options_refreshRate: Virkistystaajuus
+menu_options_pcConfig: Näppäimistö & Hiiri
+menu_options_gamepadConfig: Peliohjain

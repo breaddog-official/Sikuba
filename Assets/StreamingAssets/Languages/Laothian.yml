@@ -1,0 +1,17 @@
+back: process error
+menu_play: ຫຼິ້ນ
+menu_options: ທາງເລືອກ
+menu_quit: ເຊົາ
+menu_connection_create: ສ້າງ
+menu_connection_join: ເຂົ້າຮ່ວມ
+menu_roomOptions_networkAddress: ທີ່ຢູ່ເຄືອຂ່າຍ
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: ທ່າເຮືອ
+menu_roomOptions_maxConnections: ການເຊື່ອມຕໍ່ສູງສຸດ
+menu_roomOptions_connectionType: ປະເພດການເຊື່ອມຕໍ່
+menu_options_language: ພາສາ
+menu_options_resolution: ຄວາມລະອຽດ
+menu_options_fullscreenMode: ໂໝດເຕັມຈໍ
+menu_options_refreshRate: ອັດຕາການໂຫຼດຂໍ້ມູນຄືນໃໝ່
+menu_options_pcConfig: ແປ້ນພິມ & ຫນູ
+menu_options_gamepadConfig: ແຜ່ນເກມ

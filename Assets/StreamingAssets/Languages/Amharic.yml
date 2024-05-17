@@ -1,0 +1,17 @@
+back: ተመለስ
+menu_play: ይጫወቱ
+menu_options: አማራጮች
+menu_quit: አቁም
+menu_connection_create: ፍጠር
+menu_connection_join: ተቀላቀል
+menu_roomOptions_networkAddress: የአውታረ መረብ አድራሻ
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: ወደብ
+menu_roomOptions_maxConnections: ከፍተኛ ግንኙነቶች
+menu_roomOptions_connectionType: የግንኙነት አይነት
+menu_options_language: ቋንቋ
+menu_options_resolution: ጥራት
+menu_options_fullscreenMode: የሙሉ ማያ ገጽ ሁነታ
+menu_options_refreshRate: የማደስ ደረጃ
+menu_options_pcConfig: የቁልፍ ሰሌዳ እና መዳፊት
+menu_options_gamepadConfig: የጨዋታ ሰሌዳ

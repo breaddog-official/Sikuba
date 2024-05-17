@@ -1,0 +1,17 @@
+back: process error
+menu_play: žaisti
+menu_options: Galimybės
+menu_quit: Išeik
+menu_connection_create: Sukurti
+menu_connection_join: Prisijunk
+menu_roomOptions_networkAddress: Tinklo adresas
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Uostas
+menu_roomOptions_maxConnections: Maksimalios jungtys
+menu_roomOptions_connectionType: Ryšio tipas
+menu_options_language: Kalba
+menu_options_resolution: Rezoliucija
+menu_options_fullscreenMode: Pilno ekrano režimas
+menu_options_refreshRate: Atnaujinimo dažnis
+menu_options_pcConfig: Klaviatūra ir pelė
+menu_options_gamepadConfig: Žaidimų pultelis

@@ -1,0 +1,17 @@
+back: חזור
+menu_play: לְשַׂחֵק
+menu_options: אפשרויות
+menu_quit: לְהַפְסִיק
+menu_connection_create: לִיצוֹר
+menu_connection_join: לְהִצְטַרֵף
+menu_roomOptions_networkAddress: כתובת רשת
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: נמל
+menu_roomOptions_maxConnections: מקסימום חיבורים
+menu_roomOptions_connectionType: סוג חיבור
+menu_options_language: שפה
+menu_options_resolution: פתרון הבעיה
+menu_options_fullscreenMode: מצב מסך מלא
+menu_options_refreshRate: קצב רענון
+menu_options_pcConfig: עכבר מקלדת
+menu_options_gamepadConfig: Gamepad

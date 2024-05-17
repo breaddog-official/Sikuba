@@ -1,0 +1,17 @@
+back: process error
+menu_play: Pukllay
+menu_options: Akllanakuna
+menu_quit: Lluqsiy
+menu_connection_create: Paqarichiy
+menu_connection_join: Taqruy
+menu_roomOptions_networkAddress: Llika Dirección
+menu_roomOptions_steamId: ID de vapor
+menu_roomOptions_port: Yaykuna
+menu_roomOptions_maxConnections: Max T'inkisqakuna
+menu_roomOptions_connectionType: T'inkisqa Tipo
+menu_options_language: Simi
+menu_options_resolution: Kamachiynin
+menu_options_fullscreenMode: Modo de pantalla completa
+menu_options_refreshRate: Tasa de Refresco
+menu_options_pcConfig: Teclado & Ratón
+menu_options_gamepadConfig: Gamepad nisqa

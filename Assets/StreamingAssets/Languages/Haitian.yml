@@ -1,0 +1,17 @@
+back: Retounen
+menu_play: Jwe
+menu_options: Opsyon
+menu_quit: Kite
+menu_connection_create: Kreye
+menu_connection_join: Antre nan
+menu_roomOptions_networkAddress: Adrès rezo a
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Max Koneksyon
+menu_roomOptions_connectionType: Kalite Koneksyon
+menu_options_language: Lang
+menu_options_resolution: Rezolisyon
+menu_options_fullscreenMode: Mòd ekran konplè
+menu_options_refreshRate: Rafrechisman pousantaj
+menu_options_pcConfig: Klavye ak sourit
+menu_options_gamepadConfig: Gamepad

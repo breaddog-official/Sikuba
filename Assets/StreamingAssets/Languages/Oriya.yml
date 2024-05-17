@@ -1,0 +1,17 @@
+back: process error
+menu_play: ଖେଳନ୍ତୁ |
+menu_options: ବିକଳ୍ପଗୁଡ଼ିକ
+menu_quit: ଛାଡ
+menu_connection_create: ସୃଷ୍ଟି କରନ୍ତୁ |
+menu_connection_join: ଯୋଗ ଦିଅନ୍ତୁ |
+menu_roomOptions_networkAddress: ନେଟୱର୍କ ଠିକଣା
+menu_roomOptions_steamId: SteamID |
+menu_roomOptions_port: ବନ୍ଦର
+menu_roomOptions_maxConnections: ସର୍ବାଧିକ ସଂଯୋଗଗୁଡ଼ିକ |
+menu_roomOptions_connectionType: ସଂଯୋଗ ପ୍ରକାର |
+menu_options_language: ଭାଷା
+menu_options_resolution: ସଂକଳ୍ପ
+menu_options_fullscreenMode: ଫୁଲ୍ ସ୍କ୍ରିନ୍ ମୋଡ୍ |
+menu_options_refreshRate: ସତେଜ ହାର
+menu_options_pcConfig: କୀବୋର୍ଡ୍ ଏବଂ ମାଉସ୍ |
+menu_options_gamepadConfig: ଗେମପ୍ୟାଡ୍ |

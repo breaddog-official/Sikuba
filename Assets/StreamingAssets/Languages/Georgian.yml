@@ -1,0 +1,17 @@
+back: უკან
+menu_play: ითამაშეთ
+menu_options: Პარამეტრები
+menu_quit: თავი დაანებე
+menu_connection_create: Შექმნა
+menu_connection_join: შეუერთდი
+menu_roomOptions_networkAddress: ქსელის მისამართი
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: პორტი
+menu_roomOptions_maxConnections: მაქსიმალური კავშირები
+menu_roomOptions_connectionType: Კავშირის ტიპი
+menu_options_language: Ენა
+menu_options_resolution: რეზოლუცია
+menu_options_fullscreenMode: Სრული ეკრანის რეჟიმი
+menu_options_refreshRate: განახლების სიხშირე
+menu_options_pcConfig: კლავიატურა და მაუსი
+menu_options_gamepadConfig: გეიმპედი

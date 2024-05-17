@@ -1,0 +1,17 @@
+back: process error
+menu_play: เล่น
+menu_options: ตัวเลือก
+menu_quit: ล้มเลิก
+menu_connection_create: สร้าง
+menu_connection_join: เข้าร่วม
+menu_roomOptions_networkAddress: ที่อยู่เครือข่าย
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: ท่าเรือ
+menu_roomOptions_maxConnections: การเชื่อมต่อสูงสุด
+menu_roomOptions_connectionType: ประเภทการเชื่อมต่อ
+menu_options_language: ภาษา
+menu_options_resolution: ปณิธาน
+menu_options_fullscreenMode: โหมดเต็มหน้าจอ
+menu_options_refreshRate: อัตราการรีเฟรช
+menu_options_pcConfig: คีย์บอร์ดและเมาส์
+menu_options_gamepadConfig: เกมแพด

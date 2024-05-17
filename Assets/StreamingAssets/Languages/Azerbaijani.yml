@@ -1,0 +1,17 @@
+back: Geri
+menu_play: Oynamaq
+menu_options: Seçimlər
+menu_quit: Çıxın
+menu_connection_create: Yaradın
+menu_connection_join: Qoşulun
+menu_roomOptions_networkAddress: Şəbəkə ünvanı
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Liman
+menu_roomOptions_maxConnections: Maksimum Bağlantılar
+menu_roomOptions_connectionType: Bağlantı növü
+menu_options_language: Dil
+menu_options_resolution: Görüntü imkanı
+menu_options_fullscreenMode: Tam ekran rejimi
+menu_options_refreshRate: Yeniləmə dərəcəsi
+menu_options_pcConfig: Klaviatura və Siçan
+menu_options_gamepadConfig: Gamepad

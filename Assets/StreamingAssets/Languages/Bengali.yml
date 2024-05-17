@@ -1,0 +1,17 @@
+back: পেছনে
+menu_play: খেলা
+menu_options: অপশন
+menu_quit: প্রস্থান করুন
+menu_connection_create: সৃষ্টি
+menu_connection_join: যোগদান করুন
+menu_roomOptions_networkAddress: নেটওয়ার্ক ঠিকানা
+menu_roomOptions_steamId: স্টিমআইডি
+menu_roomOptions_port: বন্দর
+menu_roomOptions_maxConnections: সর্বোচ্চ সংযোগ
+menu_roomOptions_connectionType: সংযোগ টাইপ
+menu_options_language: ভাষা
+menu_options_resolution: রেজোলিউশন
+menu_options_fullscreenMode: পুরো স্ক্রীন মোডে
+menu_options_refreshRate: রিফ্রেশ হার
+menu_options_pcConfig: কীবোর্ড এবং মাউস
+menu_options_gamepadConfig: গেমপ্যাড

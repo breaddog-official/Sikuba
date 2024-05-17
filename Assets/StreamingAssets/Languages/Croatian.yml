@@ -1,0 +1,17 @@
+back: leđa
+menu_play: igra
+menu_options: Mogućnosti
+menu_quit: Prestati
+menu_connection_create: Stvoriti
+menu_connection_join: Pridružiti
+menu_roomOptions_networkAddress: Internet adresa
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Luka
+menu_roomOptions_maxConnections: Maks. veze
+menu_roomOptions_connectionType: Vrsta veze
+menu_options_language: Jezik
+menu_options_resolution: Rezolucija
+menu_options_fullscreenMode: Način rada preko cijelog zaslona
+menu_options_refreshRate: Brzina osvježavanja
+menu_options_pcConfig: Tipkovnica i miš
+menu_options_gamepadConfig: Gamepad

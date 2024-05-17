@@ -1,0 +1,17 @@
+back: Paş
+menu_play: Bazî
+menu_options: Vebijêrk
+menu_quit: Devjêberdan
+menu_connection_create: Xûliqandin
+menu_connection_join: process error
+menu_roomOptions_networkAddress: Navnîşana Torê
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Bender
+menu_roomOptions_maxConnections: Girêdanên Max
+menu_roomOptions_connectionType: Type Connection
+menu_options_language: Ziman
+menu_options_resolution: Resolution
+menu_options_fullscreenMode: Moda Fullscreen
+menu_options_refreshRate: Rêjeya Nûvekirinê
+menu_options_pcConfig: Klavyeya & Mişk
+menu_options_gamepadConfig: Gamepad

@@ -1,0 +1,17 @@
+back: process error
+menu_play: Spela
+menu_options: alternativ
+menu_quit: Sluta
+menu_connection_create: Skapa
+menu_connection_join: Ansluta sig
+menu_roomOptions_networkAddress: Nätverksadress
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Hamn
+menu_roomOptions_maxConnections: Max anslutningar
+menu_roomOptions_connectionType: Kopplingstyp
+menu_options_language: Språk
+menu_options_resolution: Upplösning
+menu_options_fullscreenMode: Fullskärmsläge
+menu_options_refreshRate: Uppdateringsfrekvens
+menu_options_pcConfig: Tangentbord & mus
+menu_options_gamepadConfig: Gamepad

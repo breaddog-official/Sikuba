@@ -1,0 +1,17 @@
+back: process error
+menu_play: Joaca
+menu_options: Opțiuni
+menu_quit: Părăsi
+menu_connection_create: Crea
+menu_connection_join: A te alatura
+menu_roomOptions_networkAddress: Adresă de rețea
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Conexiuni maxime
+menu_roomOptions_connectionType: Tipul conexiunii
+menu_options_language: Limba
+menu_options_resolution: Rezoluţie
+menu_options_fullscreenMode: Modul ecran întreg
+menu_options_refreshRate: Rată de reîmprospătare
+menu_options_pcConfig: Tastatura mouse
+menu_options_gamepadConfig: Gamepad

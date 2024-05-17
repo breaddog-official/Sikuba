@@ -1,0 +1,17 @@
+back: process error
+menu_play: کھیلیں
+menu_options: اختیارات
+menu_quit: چھوڑو
+menu_connection_create: بنانا
+menu_connection_join: شمولیت
+menu_roomOptions_networkAddress: نیٹ ورک ایڈریس
+menu_roomOptions_steamId: سٹیم آئی ڈی
+menu_roomOptions_port: بندرگاہ
+menu_roomOptions_maxConnections: زیادہ سے زیادہ رابطے
+menu_roomOptions_connectionType: کنکشن کی قسم
+menu_options_language: زبان
+menu_options_resolution: قرارداد
+menu_options_fullscreenMode: فل سکرین موڈ
+menu_options_refreshRate: تازہ کاری کی شرح
+menu_options_pcConfig: کی بورڈ اور ماؤس
+menu_options_gamepadConfig: گیم پیڈ

@@ -1,0 +1,17 @@
+back: tagasi
+menu_play: Mängi
+menu_options: Valikud
+menu_quit: Lõpeta
+menu_connection_create: Loo
+menu_connection_join: Liitu
+menu_roomOptions_networkAddress: Võrguaadress
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Maksimaalsed ühendused
+menu_roomOptions_connectionType: Ühenduse tüüp
+menu_options_language: Keel
+menu_options_resolution: Resolutsioon
+menu_options_fullscreenMode: Täisekraani režiim
+menu_options_refreshRate: Värskendamise määr
+menu_options_pcConfig: Klaviatuur ja hiir
+menu_options_gamepadConfig: Mängupult

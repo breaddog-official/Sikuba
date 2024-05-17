@@ -1,0 +1,17 @@
+back: Πίσω
+menu_play: Παίζω
+menu_options: Επιλογές
+menu_quit: Εγκαταλείπω
+menu_connection_create: Δημιουργώ
+menu_connection_join: Συμμετοχή
+menu_roomOptions_networkAddress: Διεύθυνση δικτύου
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Λιμάνι
+menu_roomOptions_maxConnections: Μέγιστες συνδέσεις
+menu_roomOptions_connectionType: Τύπος σύνδεσης
+menu_options_language: Γλώσσα
+menu_options_resolution: Ανάλυση
+menu_options_fullscreenMode: ΛΕΙΤΟΥΡΓΙΑ ΠΛΗΡΟΥΣ ΟΘΟΝΗΣ
+menu_options_refreshRate: Ρυθμός ανανέωσης
+menu_options_pcConfig: Πληκτρολόγιο & Ποντίκι
+menu_options_gamepadConfig: Gamepad

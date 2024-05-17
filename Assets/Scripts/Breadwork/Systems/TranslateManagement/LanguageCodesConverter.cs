@@ -28,6 +28,7 @@ namespace Scripts.TranslateManagement
         {
             switch(systemLanguage)
             {
+                case ApplicationLanguage.Unknown: return true;
                 case ApplicationLanguage.Bemba: return true;
                 case ApplicationLanguage.Bork: return true;
                 case ApplicationLanguage.Breton: return true;
@@ -156,6 +157,8 @@ namespace Scripts.TranslateManagement
         {
             switch (systemLanguage)
             {
+                case SystemLanguage.Unknown:
+                    return ApplicationLanguage.Unknown;
                 case SystemLanguage.Afrikaans:
                     return ApplicationLanguage.Afrikaans;
                 case SystemLanguage.Arabic:

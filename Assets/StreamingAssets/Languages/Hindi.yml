@@ -1,0 +1,17 @@
+back: पीछे
+menu_play: खेल
+menu_options: विकल्प
+menu_quit: छोड़ना
+menu_connection_create: बनाएं
+menu_connection_join: जोड़ना
+menu_roomOptions_networkAddress: नेटवर्क पता
+menu_roomOptions_steamId: भाप में बनी इडली
+menu_roomOptions_port: पत्तन
+menu_roomOptions_maxConnections: अधिकतम कनेक्शन
+menu_roomOptions_connectionType: रिश्ते का प्रकार
+menu_options_language: भाषा
+menu_options_resolution: संकल्प
+menu_options_fullscreenMode: पूर्ण स्क्रीन मोड
+menu_options_refreshRate: ताज़ा दर
+menu_options_pcConfig: कीबोर्ड और माउस
+menu_options_gamepadConfig: गेमपैड

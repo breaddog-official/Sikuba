@@ -1,0 +1,17 @@
+back: Tilbage
+menu_play: Spil
+menu_options: Muligheder
+menu_quit: Afslut
+menu_connection_create: skab
+menu_connection_join: Tilslutte
+menu_roomOptions_networkAddress: Netværksadresse
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Havn
+menu_roomOptions_maxConnections: Max forbindelser
+menu_roomOptions_connectionType: Tilslutningstype
+menu_options_language: Sprog
+menu_options_resolution: Løsning
+menu_options_fullscreenMode: Fuldskærmstilstand
+menu_options_refreshRate: Opdateringshastighed
+menu_options_pcConfig: Tastatur og mus
+menu_options_gamepadConfig: Gamepad

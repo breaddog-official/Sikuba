@@ -1,0 +1,17 @@
+back: process error
+menu_play: Play
+menu_options: Options
+menu_quit: Quit
+menu_connection_create: Create
+menu_connection_join: Join
+menu_roomOptions_networkAddress: Network Address
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Max Connections
+menu_roomOptions_connectionType: Connection Type
+menu_options_language: Mutauro
+menu_options_resolution: Resolution
+menu_options_fullscreenMode: Fullscreen Mode
+menu_options_refreshRate: Refresh Rate
+menu_options_pcConfig: Keyboard & Mouse
+menu_options_gamepadConfig: Gamepad

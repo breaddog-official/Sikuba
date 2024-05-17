@@ -1,0 +1,17 @@
+back: Inyuma
+menu_play: Kina
+menu_options: Amahitamo
+menu_quit: Kureka
+menu_connection_create: Kurema
+menu_connection_join: Injira
+menu_roomOptions_networkAddress: Aderesi ya Network
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Icyambu
+menu_roomOptions_maxConnections: Ihuza ryinshi
+menu_roomOptions_connectionType: Ubwoko bwihuza
+menu_options_language: Ururimi
+menu_options_resolution: Icyemezo
+menu_options_fullscreenMode: Uburyo bwuzuye
+menu_options_refreshRate: Kongera igipimo
+menu_options_pcConfig: Mwandikisho & Imbeba
+menu_options_gamepadConfig: Umukino

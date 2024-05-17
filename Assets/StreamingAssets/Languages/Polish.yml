@@ -1,0 +1,17 @@
+back: process error
+menu_play: Grać
+menu_options: Opcje
+menu_quit: Zrezygnować
+menu_connection_create: Tworzyć
+menu_connection_join: Dołączyć
+menu_roomOptions_networkAddress: Adres sieciowy
+menu_roomOptions_steamId: Steam ID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Maksymalna liczba połączeń
+menu_roomOptions_connectionType: Rodzaj połączenia
+menu_options_language: Język
+menu_options_resolution: Rezolucja
+menu_options_fullscreenMode: Pełny ekran
+menu_options_refreshRate: Częstotliwość odświeżania
+menu_options_pcConfig: Myszka klawiaturowa
+menu_options_gamepadConfig: Kontroler

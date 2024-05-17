@@ -1,0 +1,17 @@
+back: पीछे
+menu_play: खेला
+menu_options: विकल्प बा
+menu_quit: छोड़ीं
+menu_connection_create: बनावल
+menu_connection_join: ज्वाइन
+menu_roomOptions_networkAddress: नेटवर्क के पता बा
+menu_roomOptions_steamId: स्टीमआईडी के बा
+menu_roomOptions_port: बंदरगाह
+menu_roomOptions_maxConnections: मैक्स कनेक्शन के बा
+menu_roomOptions_connectionType: कनेक्शन के प्रकार के बा
+menu_options_language: भाखा
+menu_options_resolution: समाधान
+menu_options_fullscreenMode: फुलस्क्रीन मोड के बा
+menu_options_refreshRate: रिफ्रेश रेट के बा
+menu_options_pcConfig: कीबोर्ड & माउस के बा
+menu_options_gamepadConfig: गेमपैड के बा

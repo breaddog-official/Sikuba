@@ -1,0 +1,17 @@
+back: process error
+menu_play: Play
+menu_options: Għażliet
+menu_quit: Nieqaf
+menu_connection_create: Oħloq
+menu_connection_join: Jingħaqad
+menu_roomOptions_networkAddress: Indirizz tan-Netwerk
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Konnessjonijiet Max
+menu_roomOptions_connectionType: Tip ta' Konnessjoni
+menu_options_language: Lingwa
+menu_options_resolution: Riżoluzzjoni
+menu_options_fullscreenMode: Modalità Skrin Sħiħ
+menu_options_refreshRate: Rata ta' Aġġornar
+menu_options_pcConfig: Tastiera u ġurdien
+menu_options_gamepadConfig: Gamepad

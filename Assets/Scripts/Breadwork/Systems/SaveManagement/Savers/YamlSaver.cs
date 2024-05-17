@@ -7,7 +7,7 @@ namespace Scripts.SaveManagement
     [BurstCompile]
     public sealed class YamlSaver : ISaveSystem
     {
-        public string FileExtension { get { return ".yaml"; } }
+        public string FileExtension { get { return ".yml"; } } // Unity starts throwing some errors when using .yaml
 
         public void Save<T>(T input, string path)
         {

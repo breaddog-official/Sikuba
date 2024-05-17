@@ -1,0 +1,17 @@
+back: process error
+menu_play: Chwarae
+menu_options: Opsiynau
+menu_quit: Ymadael
+menu_connection_create: Creu
+menu_connection_join: Ymuno
+menu_roomOptions_networkAddress: Cyfeiriad Rhwydwaith
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Porthladd
+menu_roomOptions_maxConnections: Cysylltiadau Max
+menu_roomOptions_connectionType: Math Cysylltiad
+menu_options_language: Iaith
+menu_options_resolution: Datrysiad
+menu_options_fullscreenMode: Modd sgrin lawn
+menu_options_refreshRate: Cyfradd Adnewyddu
+menu_options_pcConfig: Bysellfwrdd a Llygoden
+menu_options_gamepadConfig: Gamepad

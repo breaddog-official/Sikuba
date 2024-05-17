@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System;
 using Unity.Burst;
 using System.Reflection;
+using static UnityEditor.PlayerSettings.Switch;
 
 namespace Scripts.TranslateManagement
 {
@@ -185,26 +186,24 @@ namespace Scripts.TranslateManagement
         }
         private Translation LoadTranslation()
         {
-            Translation loadedTranslation = SaveManager.LoadFromFile<Translation>
-                (Enum.GetName(typeof(ApplicationLanguage), currentLanguage), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+            Translation loadedTranslation = TranslateManager.LoadTranslation(currentLanguage);
             if (PRINT_DEBUG_INFO) Debug.Log($"{currentLanguage} was loaded.");
             return loadedTranslation;
         }
         private Translation LoadTranslation(ApplicationLanguage language)
         {
-            Translation loadedTranslation = SaveManager.LoadFromFile<Translation>
-                (Enum.GetName(typeof(ApplicationLanguage), language), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+            Translation loadedTranslation = TranslateManager.LoadTranslation(language);
             if (PRINT_DEBUG_INFO) Debug.Log($"{language} was loaded.");
             return loadedTranslation;
         }
         private void SaveTranslation()
         {
-            SaveManager.SaveToFile(currentTranslation, Enum.GetName(typeof(ApplicationLanguage), currentLanguage), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+            TranslateManager.SaveTranslation(currentTranslation, currentLanguage);
             if (PRINT_DEBUG_INFO) Debug.Log($"{currentLanguage} was saved.");
         }
         private void SaveTranslation(ApplicationLanguage language)
         {
-            SaveManager.SaveToFile(currentTranslation, Enum.GetName(typeof(ApplicationLanguage), language), subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
+            TranslateManager.SaveTranslation(currentTranslation, language);
             if (PRINT_DEBUG_INFO) Debug.Log($"{language} was saved.");
         }
         #endregion

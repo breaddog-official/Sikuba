@@ -1,0 +1,17 @@
+back: Vissza
+menu_play: Játék
+menu_options: Lehetőségek
+menu_quit: Kilépés
+menu_connection_create: Teremt
+menu_connection_join: Csatlakozik
+menu_roomOptions_networkAddress: Hálózati cím
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Kikötő
+menu_roomOptions_maxConnections: Max csatlakozások
+menu_roomOptions_connectionType: Kapcsolat típus
+menu_options_language: Nyelv
+menu_options_resolution: Felbontás
+menu_options_fullscreenMode: Teljes képernyős mód
+menu_options_refreshRate: Frissítési ráta
+menu_options_pcConfig: Billentyűzet és egér
+menu_options_gamepadConfig: Gamepad

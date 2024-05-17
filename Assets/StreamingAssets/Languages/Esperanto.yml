@@ -1,0 +1,17 @@
+back: Reen
+menu_play: Ludu
+menu_options: Opcioj
+menu_quit: Forlasu
+menu_connection_create: Krei
+menu_connection_join: Aliĝu
+menu_roomOptions_networkAddress: Reta Adreso
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Haveno
+menu_roomOptions_maxConnections: Max Konektoj
+menu_roomOptions_connectionType: Tipo de Konekto
+menu_options_language: Lingvo
+menu_options_resolution: Rezolucio
+menu_options_fullscreenMode: Plenekrana Reĝimo
+menu_options_refreshRate: Refreŝiga indico
+menu_options_pcConfig: Klavaro & Muso
+menu_options_gamepadConfig: Ludpad

@@ -1,0 +1,17 @@
+back: Nazad
+menu_play: Igraj
+menu_options: Opcije
+menu_quit: Prestani
+menu_connection_create: Stvoriti
+menu_connection_join: Pridružite se
+menu_roomOptions_networkAddress: Mrežna adresa
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Max Connections
+menu_roomOptions_connectionType: Vrsta veze
+menu_options_language: Jezik
+menu_options_resolution: Rezolucija
+menu_options_fullscreenMode: Način rada preko cijelog ekrana
+menu_options_refreshRate: Refresh Rate
+menu_options_pcConfig: Tastatura i miš
+menu_options_gamepadConfig: Gamepad

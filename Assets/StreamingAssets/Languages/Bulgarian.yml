@@ -1,0 +1,17 @@
+back: обратно
+menu_play: Играйте
+menu_options: Настроики
+menu_quit: Откажете се
+menu_connection_create: Създавайте
+menu_connection_join: Присъединяване
+menu_roomOptions_networkAddress: Мрежови адрес
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Порт
+menu_roomOptions_maxConnections: Максимални връзки
+menu_roomOptions_connectionType: Вид на връзката
+menu_options_language: език
+menu_options_resolution: Резолюция
+menu_options_fullscreenMode: Режим на цял екран
+menu_options_refreshRate: Скорост на обновяване
+menu_options_pcConfig: Клавиатура и мишка
+menu_options_gamepadConfig: Геймпад

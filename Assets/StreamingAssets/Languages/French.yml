@@ -1,0 +1,17 @@
+back: Dos
+menu_play: Jouer
+menu_options: Possibilités
+menu_quit: Quitter
+menu_connection_create: Créer
+menu_connection_join: Rejoindre
+menu_roomOptions_networkAddress: Adresse réseau
+menu_roomOptions_steamId: ID de vapeur
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Connexions maximales
+menu_roomOptions_connectionType: Type de connexion
+menu_options_language: Langue
+menu_options_resolution: Résolution
+menu_options_fullscreenMode: Mode plein écran
+menu_options_refreshRate: Fréquence de rafraîchissement
+menu_options_pcConfig: Clavier souris
+menu_options_gamepadConfig: Manette de jeu

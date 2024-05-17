@@ -1,0 +1,17 @@
+back: Torna
+menu_play: Ghjucà
+menu_options: Opzioni
+menu_quit: Lascia
+menu_connection_create: Crià
+menu_connection_join: Unisci
+menu_roomOptions_networkAddress: Indirizzu di a rete
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Portu
+menu_roomOptions_maxConnections: Max Connections
+menu_roomOptions_connectionType: Tipu di cunnessione
+menu_options_language: Lingua
+menu_options_resolution: Risoluzione
+menu_options_fullscreenMode: Modu Fullscreen
+menu_options_refreshRate: Frequenza di rinfrescante
+menu_options_pcConfig: Tastiera è mouse
+menu_options_gamepadConfig: Gamepad

@@ -1,0 +1,17 @@
+back: Atpakaļ
+menu_play: Spēlēt
+menu_options: Iespējas
+menu_quit: Iziet
+menu_connection_create: Izveidot
+menu_connection_join: process error
+menu_roomOptions_networkAddress: Tīkla adrese
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Osta
+menu_roomOptions_maxConnections: Maksimālie savienojumi
+menu_roomOptions_connectionType: Savienojuma veids
+menu_options_language: Valoda
+menu_options_resolution: Izšķirtspēja
+menu_options_fullscreenMode: Pilnekrāna režīms
+menu_options_refreshRate: Atjaunošanas biežums
+menu_options_pcConfig: Tastatūra un pele
+menu_options_gamepadConfig: Spēļu panelis

@@ -8,9 +8,17 @@ namespace Scripts.TranslateManagement
     {
         private TMP_Text text;
 
-        protected override void OnEnable()
+        protected override void Awake()
         {
-            text = text ? text : GetComponent<TMP_Text>();
+            if (TryGetComponent(out TMP_Text text))
+            {
+                this.text = text;
+            }
+            else
+            {
+                this.text = GetComponentInChildren<TMP_Text>();
+            }
+            base.Awake();
         }
         public override void ChangeElement()
         {

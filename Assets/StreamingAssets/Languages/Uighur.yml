@@ -1,0 +1,17 @@
+back: process error
+menu_play: ئويناش
+menu_options: تاللانما
+menu_quit: چېكىنىش
+menu_connection_create: قۇر
+menu_connection_join: قوشۇلۇڭ
+menu_roomOptions_networkAddress: تور ئادرېسى
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: پورت
+menu_roomOptions_maxConnections: Max Connections
+menu_roomOptions_connectionType: ئۇلىنىش تىپى
+menu_options_language: تىل
+menu_options_resolution: قارار
+menu_options_fullscreenMode: تولۇق ئېكران ھالىتى
+menu_options_refreshRate: دەرىجىسىنى يېڭىلاش
+menu_options_pcConfig: كۇنۇپكا تاختىسى ۋە مائۇس
+menu_options_gamepadConfig: Gamepad

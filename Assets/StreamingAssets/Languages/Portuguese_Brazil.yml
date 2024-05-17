@@ -1,0 +1,17 @@
+back: process error
+menu_play: Jogar
+menu_options: Opções
+menu_quit: Desistir
+menu_connection_create: Criar
+menu_connection_join: Juntar
+menu_roomOptions_networkAddress: Endereço de rede
+menu_roomOptions_steamId: ID de vapor
+menu_roomOptions_port: Porta
+menu_roomOptions_maxConnections: Máximo de conexões
+menu_roomOptions_connectionType: Tipo de conexão
+menu_options_language: Linguagem
+menu_options_resolution: Resolução
+menu_options_fullscreenMode: Modo tela cheia
+menu_options_refreshRate: Taxa de atualização
+menu_options_pcConfig: Teclado mouse
+menu_options_gamepadConfig: Controle

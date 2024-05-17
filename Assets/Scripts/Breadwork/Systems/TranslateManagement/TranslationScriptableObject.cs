@@ -10,6 +10,8 @@ using UnityEditor;
 using Unity.Burst;
 using System.Reflection;
 using System.Threading;
+using static UnityEditor.PlayerSettings.Switch;
+using System.Collections.Generic;
 
 namespace Scripts.TranslateManagement
 {
@@ -28,7 +30,7 @@ namespace Scripts.TranslateManagement
         {
             try
             {
-                Translation = LoadTranslation(currentLanguage);
+                Translation = TranslateManager.LoadTranslation(currentLanguage);
             }
             catch (FileNotFoundException)
             {
@@ -40,7 +42,7 @@ namespace Scripts.TranslateManagement
         {
             try
             {
-                Translation = LoadTranslation(currentLanguage);
+                Translation = TranslateManager.LoadTranslation(currentLanguage);
             }
             catch (FileNotFoundException)
             {
@@ -48,50 +50,16 @@ namespace Scripts.TranslateManagement
                 Translation = new();
             }
         }
-        public Translation LoadTranslation(ApplicationLanguage language)
-        {
-            if (SaveManager.ExistsFile(SaveManager.CreatePath
-                (Enum.GetName(typeof(ApplicationLanguage), language), TranslateManager.LANGUAGES_SUBFOLDER,
-                sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication)))
-            {
-                return SaveManager.LoadFromFile<Translation>
-                (Enum.GetName(typeof(ApplicationLanguage), language),
-                subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
-            }
-            else
-            {
-                throw new FileNotFoundException($"{language} not found.");
-            }
-        }
-        public Translation LoadTranslation(string language)
-        {
-            if (SaveManager.ExistsFile(SaveManager.CreatePath
-                (language, TranslateManager.LANGUAGES_SUBFOLDER,
-                sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication)))
-            {
-                return SaveManager.LoadFromFile<Translation>
-                (language, subFolder: TranslateManager.LANGUAGES_SUBFOLDER, sensitivity: SaveManager.UpdateSensitivity.UpdateWithApplication);
-            }
-            else
-            {
-                throw new FileNotFoundException($"{language} not found.");
-            }
-        }
         [Button]
         public void CreateTranslationFromThis()
         {
-            SaveTranslation(ref Translation, currentLanguage);
+            TranslateManager.SaveTranslation(Translation, currentLanguage);
             Debug.Log("Success!");
             /*AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(this));
             DestroyImmediate(this, true);
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();*/
-        }
-        private void SaveTranslation(ref Translation translation, ApplicationLanguage language)
-        {
-            SaveManager.SaveToFile(translation, Enum.GetName(typeof(ApplicationLanguage), language),
-                SaveManager.Savers.YAML, TranslateManager.LANGUAGES_SUBFOLDER, SaveManager.UpdateSensitivity.UpdateWithApplication);
         }
         [Button("Translate with Google Translater (from English)")]
         public void AutoTranslateWithReflections()
@@ -105,7 +73,7 @@ namespace Scripts.TranslateManagement
             string code = LanguageCodesConverter.ConvertApplicationLanguageToHLCode(currentLanguage);
 
             FieldInfo[] translationFields = typeof(Translation).GetFields();
-            Translation english = LoadTranslation(ApplicationLanguage.English);
+            Translation english = TranslateManager.LoadTranslation(ApplicationLanguage.English);
             for (int i = 0; i < translationFields.Length; i++)
             {
                 if (translationFields[i].FieldType != typeof(string)) continue;
@@ -114,7 +82,7 @@ namespace Scripts.TranslateManagement
                 string englishValue = (string)translationFields[i].GetValue(english);
                 if (string.IsNullOrEmpty(currentValue))
                 {
-                    GoogleTranslate.TranslateGoogleWithReflections(ref englishValue, Translation, translationFields[i], code);
+                    GoogleTranslate.TranslateGoogleWithReflections(englishValue, Translation, translationFields[i], code);
                 }
             }
         }
@@ -129,7 +97,7 @@ namespace Scripts.TranslateManagement
             string code = LanguageCodesConverter.ConvertApplicationLanguageToHLCode(language);
 
             FieldInfo[] translationFields = typeof(Translation).GetFields();
-            Translation english = LoadTranslation(ApplicationLanguage.English);
+            Translation english = TranslateManager.LoadTranslation(ApplicationLanguage.English);
             for (int i = 0; i < translationFields.Length; i++)
             {
                 if (translationFields[i].FieldType != typeof(string)) continue;
@@ -138,11 +106,11 @@ namespace Scripts.TranslateManagement
                 string englishValue = (string)translationFields[i].GetValue(english);
                 if (string.IsNullOrEmpty(currentValue))
                 {
-                    GoogleTranslate.TranslateGoogleWithReflections(ref englishValue, translation, translationFields[i], code);
+                    GoogleTranslate.TranslateGoogleWithReflections(englishValue, translation, translationFields[i], code);
                 }
             }
         }
-        public void AutoTranslate(ref Translation translation, ApplicationLanguage language)
+        public void AutoTranslate(Translation translation, ApplicationLanguage language)
         {
             if (translation == null)
             {
@@ -158,7 +126,11 @@ namespace Scripts.TranslateManagement
             string code = LanguageCodesConverter.ConvertApplicationLanguageToHLCode(language);
 
             FieldInfo[] translationFields = typeof(Translation).GetFields();
-            Translation english = LoadTranslation(ApplicationLanguage.English);
+            Translation english = TranslateManager.LoadTranslation(ApplicationLanguage.English);
+
+            AsyncGoogleTranslate[] poolTranslaters = new AsyncGoogleTranslate[translationFields.Length];
+            ManualResetEvent[] doneEventsPool = new ManualResetEvent[translationFields.Length];
+
             for (int i = 0; i < translationFields.Length; i++)
             {
                 if (translationFields[i].FieldType != typeof(string)) continue;
@@ -167,17 +139,36 @@ namespace Scripts.TranslateManagement
                 string englishValue = (string)translationFields[i].GetValue(english);
                 if (string.IsNullOrEmpty(currentValue))
                 {
-                    translationFields[i].SetValue(translation, GoogleTranslate.TranslateGoogle(ref englishValue, out bool isDone, code));
+                    Debug.Log("asdasd");
+                    poolTranslaters[i] = new AsyncGoogleTranslate(englishValue, translation, translationFields[i], doneEventsPool[i], code);
+                    doneEventsPool[i] = new ManualResetEvent(false);
+                    ThreadPool.QueueUserWorkItem(poolTranslaters[i].StartTranslate);
+                    /*translationFields[i].SetValue(translation, GoogleTranslate.TranslateGoogle(englishValue, out bool isDone, code));
                     if (isDone == false)
                     {
                         DebugLogLanguage(language, isDone);
                         return;
-                    }
+                    }*/
+                }
+            }
+            List<ManualResetEvent> resetEvents = new List<ManualResetEvent>();
+            for (int i = 0; i < doneEventsPool.Length; i++)
+            {
+                if (doneEventsPool[i] != null) resetEvents.Add(doneEventsPool[i]);
+            }
+
+            WaitHandle.WaitAll(resetEvents.ToArray());
+            for (int i = 0; i < poolTranslaters.Length; i++)
+            {
+                if (poolTranslaters[i].IsDone == false)
+                {
+                    DebugLogLanguage(language, false);
+                    return;
                 }
             }
             DebugLogLanguage(language, true);
         }
-        private void DebugLogLanguage(ApplicationLanguage language, bool isDone, string reason = null)
+        public static void DebugLogLanguage(ApplicationLanguage language, bool isDone, string reason = null)
         {
             Debug.Log($"<color={(isDone ? nameof(Color.green) : nameof(Color.red))}>" +
                             $"{language} is{(!isDone ? " not" : string.Empty)} translated{(!isDone && reason != null ? $" because {reason}" : "!")}"
@@ -199,22 +190,55 @@ namespace Scripts.TranslateManagement
                 Translation translationFile;
                 try
                 {
-                    translationFile = LoadTranslation(languages[i]);
+                    translationFile = TranslateManager.LoadTranslation(languages[i]);
                 }
                 catch (FileNotFoundException)
                 {
                     //Debug.Log($"Translation {languages[i]} not found. This is fine");
                     translationFile = new();
                 }
-                AutoTranslate(ref translationFile, parsedEnum);
-                SaveTranslation(ref translationFile, parsedEnum);
+                AutoTranslate(translationFile, parsedEnum);
+                TranslateManager.SaveTranslation(translationFile, parsedEnum);
                 Thread.Sleep(50);
             }
         }
+        public class AsyncGoogleTranslate
+        {
+            string text;
+            Translation translation;
+            FieldInfo fieldInfo;
+            ManualResetEvent doneEvent;
+            string translationTo = "en";
 
+            public bool IsDone { get; private set; }
+
+            const int maxNumberOfRetry = 32;
+
+            public AsyncGoogleTranslate(string text, Translation translation, FieldInfo fieldInfo, ManualResetEvent doneEvent, string translationTo)
+            {
+                this.text = text;
+                this.translation = translation;
+                this.fieldInfo = fieldInfo;
+                this.doneEvent = doneEvent;
+                this.translationTo = translationTo;
+            }
+            public void StartTranslate(object context)
+            {
+                int numberOfRetry = 0;
+                do
+                {
+                    numberOfRetry++;
+                    fieldInfo.SetValue(translation, GoogleTranslate.TranslateGoogle(text, out bool isDone, translationTo));
+                    IsDone = isDone;
+                }
+                while (IsDone == false || numberOfRetry < maxNumberOfRetry);
+                Debug.Log($"перевёл {text} с успехом {IsDone}");
+                doneEvent.Set();
+            }
+        }
         public static class GoogleTranslate
         {
-            public static string TranslateGoogle(ref string text, out bool isDone, string translationTo = "en")
+            public static string TranslateGoogle(string text, out bool isDone, string translationTo = "en")
             {
                 isDone = true;
                 var url = string.Format("https://translate.google.com" + "/translate_a/single?client=gtx&dt=t&sl={0}&tl={1}&q={2}",
@@ -241,7 +265,7 @@ namespace Scripts.TranslateManagement
 
                 return response;
             }
-            public static void TranslateGoogleWithReflections(ref string text, Translation translation, FieldInfo fieldInfo, string translationTo = "en")
+            public static void TranslateGoogleWithReflections(string text, Translation translation, FieldInfo fieldInfo, string translationTo = "en")
             {
                 var url = string.Format("https://translate.google.com" + "/translate_a/single?client=gtx&dt=t&sl={0}&tl={1}&q={2}",
                     "auto", translationTo, WebUtility.UrlEncode(text));
@@ -261,7 +285,6 @@ namespace Scripts.TranslateManagement
                         Debug.LogError("The process is not completed! Most likely, you made too many requests. In this case, the Google Translate API blocks access to the translation for a while.  Please try again later. Do not translate the text too often, so that Google does not consider your actions as spam");
                         return;
                     }
-                    Debug.Log($"Completed: {fieldInfo.Name}: {response}");
                     fieldInfo.SetValue(translation, response);
                 };
             }

@@ -1,0 +1,17 @@
+back: گەڕانەوە
+menu_play: یاری
+menu_options: بژاردەکان
+menu_quit: وازهێنان
+menu_connection_create: دروستکردن
+menu_connection_join: پەیوەندیکردن
+menu_roomOptions_networkAddress: ناونیشانی تۆڕ
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: بەندەر
+menu_roomOptions_maxConnections: process error
+menu_roomOptions_connectionType: جۆری پەیوەندی
+menu_options_language: زمان
+menu_options_resolution: بڕیار
+menu_options_fullscreenMode: پڕ بە شاشە
+menu_options_refreshRate: رێژەی نوێ بوونەوە
+menu_options_pcConfig: کیبۆرد و ماوس
+menu_options_gamepadConfig: گەیمپاد

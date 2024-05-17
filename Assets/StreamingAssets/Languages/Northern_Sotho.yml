@@ -1,0 +1,17 @@
+back: process error
+menu_play: Raloka
+menu_options: Dikgetho
+menu_quit: Etšwa
+menu_connection_create: Hlama
+menu_connection_join: Kopanya
+menu_roomOptions_networkAddress: Aterese ya Neteweke
+menu_roomOptions_steamId: ID ya Steam
+menu_roomOptions_port: Phote
+menu_roomOptions_maxConnections: Max Dikgokagano
+menu_roomOptions_connectionType: Mohuta wa Kgokagano
+menu_options_language: Polelo
+menu_options_resolution: Tharollo
+menu_options_fullscreenMode: Mokgwa wa skrine se feletseng
+menu_options_refreshRate: Sekhahla sa go Hlabolla
+menu_options_pcConfig: Keyboard & Mouse
+menu_options_gamepadConfig: Gamepad ya dipapadi

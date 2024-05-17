@@ -1,0 +1,17 @@
+back: process error
+menu_play: Dlala
+menu_options: Iinketho
+menu_quit: Yeka
+menu_connection_create: Yenza
+menu_connection_join: Joyina
+menu_roomOptions_networkAddress: Idilesi Yenethiwekhi
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Izibuko
+menu_roomOptions_maxConnections: Uqhagamshelwano oluphezulu
+menu_roomOptions_connectionType: Uhlobo loQhagamshelwano
+menu_options_language: Ulwimi
+menu_options_resolution: Isigqibo
+menu_options_fullscreenMode: Imo yesikrini esigcweleyo
+menu_options_refreshRate: Ireyithi yokuhlaziya
+menu_options_pcConfig: Ikhibhodi kunye neMouse
+menu_options_gamepadConfig: Iphedi yomdlalo

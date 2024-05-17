@@ -1,0 +1,17 @@
+back: process error
+menu_play: കളിക്കുക
+menu_options: ഓപ്ഷനുകൾ
+menu_quit: ഉപേക്ഷിക്കുക
+menu_connection_create: സൃഷ്ടിക്കാൻ
+menu_connection_join: ചേരുക
+menu_roomOptions_networkAddress: നെറ്റ്‌വർക്ക് വിലാസം
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: തുറമുഖം
+menu_roomOptions_maxConnections: പരമാവധി കണക്ഷനുകൾ
+menu_roomOptions_connectionType: കണക്ഷൻ തരം
+menu_options_language: ഭാഷ
+menu_options_resolution: റെസലൂഷൻ
+menu_options_fullscreenMode: ഫുൾസ്ക്രീൻ മോഡ്
+menu_options_refreshRate: പുതുക്കിയ നിരക്ക്
+menu_options_pcConfig: കീബോർഡും മൗസും
+menu_options_gamepadConfig: ഗെയിംപാഡ്

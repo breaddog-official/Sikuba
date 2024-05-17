@@ -32,7 +32,7 @@ namespace Scripts.Core
         }
         private void Start()
         {
-            TranslateManager.ChangeLanguage(SettingsManager.ReadValue<ApplicationLanguage>(5));
+            TranslateManager.ChangeLanguageString(SettingsManager.ReadValue<string>(5));
         }
         public static int GetElementIndexInArray<T>(T element, IEnumerator array)
         {

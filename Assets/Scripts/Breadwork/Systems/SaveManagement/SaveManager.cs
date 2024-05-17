@@ -55,7 +55,7 @@ namespace Scripts.SaveManagement
         /// <param name="saveSystem">Saver</param>
         public static void SaveToFile<T>(T input, string fileName, ISaveSystem saveSystem, string subFolder = DEFAULT_SAVE_SUBFOLDER, UpdateSensitivity sensitivity = UpdateSensitivity.Persistent)
         {
-            ISaveSystem localSaveSystem = saveSystem == null ? saveSystem : SaveSystem;
+            ISaveSystem localSaveSystem = saveSystem != null ? saveSystem : SaveSystem;
             string path = CreatePath(fileName, subFolder, localSaveSystem, sensitivity);
 
             localSaveSystem.Save(input, path);
@@ -82,7 +82,7 @@ namespace Scripts.SaveManagement
         /// <param name="saveSystem">Saver</param>
         public static T LoadFromFile<T>(string fileName, ISaveSystem saveSystem, string subFolder = DEFAULT_SAVE_SUBFOLDER, UpdateSensitivity sensitivity = UpdateSensitivity.Persistent)
         {
-            ISaveSystem localSaveSystem = saveSystem == null ? saveSystem : SaveSystem;
+            ISaveSystem localSaveSystem = saveSystem != null ? saveSystem : SaveSystem;
             string path = CreatePath(fileName, subFolder, localSaveSystem, sensitivity);
 
             if (!ExistsFile(path))
@@ -113,7 +113,7 @@ namespace Scripts.SaveManagement
         /// <param name="saveSystem">Saver</param>
         public static void SaveToPath<T>(T input, string path, ISaveSystem saveSystem)
         {
-            ISaveSystem localSaveSystem = saveSystem == null ? saveSystem : SaveSystem;
+            ISaveSystem localSaveSystem = saveSystem != null ? saveSystem : SaveSystem;
 
             path = CheckExtension(path);
             CheckDirectory(path);
@@ -138,7 +138,7 @@ namespace Scripts.SaveManagement
         /// <param name="saveSystem">Saver</param>
         public static T LoadFromPath<T>(string path, ISaveSystem saveSystem)
         {
-            ISaveSystem localSaveSystem = saveSystem == null ? saveSystem : SaveSystem;
+            ISaveSystem localSaveSystem = saveSystem != null ? saveSystem : SaveSystem;
 
             if (!ExistsFile(path))
                 throw new FileNotFoundException($"File not found ({path})");
@@ -219,6 +219,17 @@ namespace Scripts.SaveManagement
             string newPath = CheckExtension
                 (Path.Combine(GetSaveFolderPath(sensitivity), subFolder, Path.GetFileName(fileName)), saveSystem);
             CheckDirectory(newPath); 
+
+            return newPath;
+        }
+        /// <summary>
+        /// Creates a platform-specific file path to the save folder and adds an extension (if missing)
+        /// </summary>
+        public static string CreatePath(string fileName, Savers saveSystem, string subFolder = DEFAULT_SAVE_SUBFOLDER, UpdateSensitivity sensitivity = UpdateSensitivity.Persistent)
+        {
+            string newPath = CheckExtension
+                (Path.Combine(GetSaveFolderPath(sensitivity), subFolder, Path.GetFileName(fileName)), GetSaveSystem(saveSystem));
+            CheckDirectory(newPath);
 
             return newPath;
         }

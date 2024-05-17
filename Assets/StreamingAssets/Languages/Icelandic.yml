@@ -1,0 +1,17 @@
+back: Til baka
+menu_play: Leika
+menu_options: Valmöguleikar
+menu_quit: Hætta
+menu_connection_create: Búa til
+menu_connection_join: Vertu með
+menu_roomOptions_networkAddress: Netfang
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Höfn
+menu_roomOptions_maxConnections: Hámarkstengingar
+menu_roomOptions_connectionType: Tegund tengingar
+menu_options_language: Tungumál
+menu_options_resolution: Upplausn
+menu_options_fullscreenMode: Fullskjár hamur
+menu_options_refreshRate: Endurnýjunartíðni
+menu_options_pcConfig: Lyklaborð & mús
+menu_options_gamepadConfig: Gamepad

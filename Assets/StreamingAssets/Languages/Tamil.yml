@@ -1,0 +1,17 @@
+back: process error
+menu_play: விளையாடு
+menu_options: விருப்பங்கள்
+menu_quit: விட்டுவிட
+menu_connection_create: உருவாக்கு
+menu_connection_join: சேருங்கள்
+menu_roomOptions_networkAddress: பிணைய முகவரி
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: துறைமுகம்
+menu_roomOptions_maxConnections: அதிகபட்ச இணைப்புகள்
+menu_roomOptions_connectionType: இணைப்பு வகை
+menu_options_language: மொழி
+menu_options_resolution: தீர்மானம்
+menu_options_fullscreenMode: முழு திரையில் முறையில்
+menu_options_refreshRate: புதுப்பிப்பு விகிதம்
+menu_options_pcConfig: விசைப்பலகை & சுட்டி
+menu_options_gamepadConfig: கேம்பேட்

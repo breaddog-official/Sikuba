@@ -1,0 +1,17 @@
+back: Kubwerera
+menu_play: Sewerani
+menu_options: Zosankha
+menu_quit: Siyani
+menu_connection_create: Pangani
+menu_connection_join: Lowani
+menu_roomOptions_networkAddress: Network Address
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Max Connections
+menu_roomOptions_connectionType: Mtundu Wolumikizira
+menu_options_language: Chiyankhulo
+menu_options_resolution: Kusamvana
+menu_options_fullscreenMode: Full Screen Mode
+menu_options_refreshRate: Mtengo Wotsitsimutsa
+menu_options_pcConfig: Kiyibodi & Mouse
+menu_options_gamepadConfig: Gamepad

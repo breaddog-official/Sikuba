@@ -1,0 +1,17 @@
+back: Bumalik
+menu_play: Maglaro
+menu_options: Mga pagpipilian
+menu_quit: quit
+menu_connection_create: Lumikha
+menu_connection_join: Sumali
+menu_roomOptions_networkAddress: Address ng Network
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Max na Koneksyon
+menu_roomOptions_connectionType: Uri ng koneksyon
+menu_options_language: Wika
+menu_options_resolution: Resolusyon
+menu_options_fullscreenMode: Fullscreen Mode
+menu_options_refreshRate: Rate ng Pag-refresh
+menu_options_pcConfig: Keyboard at Mouse
+menu_options_gamepadConfig: Gamepad

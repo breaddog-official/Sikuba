@@ -1,0 +1,17 @@
+back: process error
+menu_play: ఆడండి
+menu_options: ఎంపికలు
+menu_quit: నిష్క్రమించు
+menu_connection_create: సృష్టించు
+menu_connection_join: చేరండి
+menu_roomOptions_networkAddress: నెట్‌వర్క్ చిరునామా
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: పోర్ట్
+menu_roomOptions_maxConnections: గరిష్ట కనెక్షన్లు
+menu_roomOptions_connectionType: కనెక్షన్ రకం
+menu_options_language: భాష
+menu_options_resolution: స్పష్టత
+menu_options_fullscreenMode: పూర్తి స్క్రీన్ మోడ్
+menu_options_refreshRate: రిఫ్రెష్ రేట్
+menu_options_pcConfig: కీబోర్డ్ & మౌస్
+menu_options_gamepadConfig: గేమ్‌ప్యాడ్

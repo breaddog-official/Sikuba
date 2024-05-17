@@ -1,0 +1,17 @@
+back: Ar ais
+menu_play: Imirt
+menu_options: Roghanna
+menu_quit: Scoir
+menu_connection_create: Cruthaigh
+menu_connection_join: Bígí
+menu_roomOptions_networkAddress: Seoladh Líonra
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Naisc Max
+menu_roomOptions_connectionType: Cineál Ceangail
+menu_options_language: Teanga
+menu_options_resolution: Rún
+menu_options_fullscreenMode: Mód lánscáileáin
+menu_options_refreshRate: Ráta Athnuachan
+menu_options_pcConfig: Méarchlár & Luch
+menu_options_gamepadConfig: Gamepad

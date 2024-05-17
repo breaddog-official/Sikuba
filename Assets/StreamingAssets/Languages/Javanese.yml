@@ -1,0 +1,17 @@
+back: Mbalik
+menu_play: Dolanan
+menu_options: Pilihan
+menu_quit: mandek
+menu_connection_create: Nggawe
+menu_connection_join: gabung
+menu_roomOptions_networkAddress: Alamat jaringan
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Pelabuhan
+menu_roomOptions_maxConnections: Sambungan Max
+menu_roomOptions_connectionType: Jinis Sambungan
+menu_options_language: Basa
+menu_options_resolution: Resolusi
+menu_options_fullscreenMode: Mode layar wutuh
+menu_options_refreshRate: Refresh Rate
+menu_options_pcConfig: Keyboard & Mouse
+menu_options_gamepadConfig: Gamepad

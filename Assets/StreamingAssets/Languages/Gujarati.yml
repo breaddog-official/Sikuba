@@ -1,0 +1,17 @@
+back: પાછળ
+menu_play: રમ
+menu_options: વિકલ્પો
+menu_quit: છોડો
+menu_connection_create: બનાવો
+menu_connection_join: જોડાઓ
+menu_roomOptions_networkAddress: નેટવર્ક સરનામું
+menu_roomOptions_steamId: સ્ટીમઆઈડી
+menu_roomOptions_port: બંદર
+menu_roomOptions_maxConnections: મહત્તમ જોડાણો
+menu_roomOptions_connectionType: કનેક્શનનો પ્રકાર
+menu_options_language: ભાષા
+menu_options_resolution: ઠરાવ
+menu_options_fullscreenMode: પૂર્ણસ્ક્રીન મોડ
+menu_options_refreshRate: તાજું દર
+menu_options_pcConfig: કીબોર્ડ અને માઉસ
+menu_options_gamepadConfig: ગેમપેડ

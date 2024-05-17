@@ -1,0 +1,17 @@
+back: Terug
+menu_play: Speel
+menu_options: Opsies
+menu_quit: Hou op
+menu_connection_create: Skep
+menu_connection_join: Sluit aan
+menu_roomOptions_networkAddress: Netwerkadres
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Maksimum verbindings
+menu_roomOptions_connectionType: Tipe verbinding
+menu_options_language: Taal
+menu_options_resolution: Resolusie
+menu_options_fullscreenMode: Volskermmodus
+menu_options_refreshRate: Herlaaitempo
+menu_options_pcConfig: Sleutelbord en muis
+menu_options_gamepadConfig: Gamepad

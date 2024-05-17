@@ -1,0 +1,17 @@
+back: process error
+menu_play: بازی
+menu_options: گزینه ها
+menu_quit: ترک کنید
+menu_connection_create: ايجاد كردن
+menu_connection_join: پیوستن
+menu_roomOptions_networkAddress: آدرس شبکه
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: بندر
+menu_roomOptions_maxConnections: حداکثر اتصالات
+menu_roomOptions_connectionType: نوع اتصال
+menu_options_language: زبان
+menu_options_resolution: وضوح
+menu_options_fullscreenMode: حالت تمام صفحه
+menu_options_refreshRate: نرخ تجدید
+menu_options_pcConfig: صفحه کلید و ماوس
+menu_options_gamepadConfig: گیم پد

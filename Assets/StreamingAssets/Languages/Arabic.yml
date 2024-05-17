@@ -1,0 +1,17 @@
+back: خلف
+menu_play: يلعب
+menu_options: خيارات
+menu_quit: يترك
+menu_connection_create: يخلق
+menu_connection_join: ينضم
+menu_roomOptions_networkAddress: عنوان الشبكة
+menu_roomOptions_steamId: معرف البخار
+menu_roomOptions_port: ميناء
+menu_roomOptions_maxConnections: اتصالات ماكس
+menu_roomOptions_connectionType: نوع الاتصال
+menu_options_language: لغة
+menu_options_resolution: دقة
+menu_options_fullscreenMode: وضع ملء الشاشة
+menu_options_refreshRate: معدل التحديث
+menu_options_pcConfig: فأرة لوحة المفاتيح
+menu_options_gamepadConfig: لوحة اللعبة

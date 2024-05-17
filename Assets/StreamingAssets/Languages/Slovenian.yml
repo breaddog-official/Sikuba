@@ -1,0 +1,17 @@
+back: process error
+menu_play: Igraj
+menu_options: Opcije
+menu_quit: Prenehati
+menu_connection_create: Ustvari
+menu_connection_join: Pridruži se
+menu_roomOptions_networkAddress: Omrežni naslov
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Pristanišče
+menu_roomOptions_maxConnections: Največ povezav
+menu_roomOptions_connectionType: Vrsta povezave
+menu_options_language: Jezik
+menu_options_resolution: Resolucija
+menu_options_fullscreenMode: Celozaslonski način
+menu_options_refreshRate: Hitrost osveževanja
+menu_options_pcConfig: Tipkovnica in miška
+menu_options_gamepadConfig: Igralni plošček

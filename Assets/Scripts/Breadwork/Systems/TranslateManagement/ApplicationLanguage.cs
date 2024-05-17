@@ -2,6 +2,7 @@
 {
     public enum ApplicationLanguage
     {
+        Unknown,
         Afrikaans,
         Akan,
         Albanian,

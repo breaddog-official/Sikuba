@@ -19,6 +19,7 @@ namespace Scripts.UI
             {
                 resolutionNames.Add($"{resolutions[i].width}x{resolutions[i].height} {Math.Floor(resolutions[i].refreshRateRatio.value)}hz");
             }
+            resolutionDropdown.ClearOptions();
             resolutionDropdown.AddOptions(resolutionNames);
             resolutionDropdown.value = SettingsManager.ReadValue<int>(2);
         }

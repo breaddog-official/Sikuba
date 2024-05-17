@@ -1,0 +1,17 @@
+back: process error
+menu_play: Ciyaar
+menu_options: Ikhtiyaarada
+menu_quit: Jooji
+menu_connection_create: Abuur
+menu_connection_join: Ku biir
+menu_roomOptions_networkAddress: Ciwaanka Shabakadda
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Dekedda
+menu_roomOptions_maxConnections: Xiriirinta ugu badan
+menu_roomOptions_connectionType: Nooca isku xirka
+menu_options_language: Luuqad
+menu_options_resolution: Qaraarka
+menu_options_fullscreenMode: Qaabka shaashada buuxda
+menu_options_refreshRate: Heerka Cusbooneysii
+menu_options_pcConfig: Kiiboodhka & Jiirka
+menu_options_gamepadConfig: Gamepad

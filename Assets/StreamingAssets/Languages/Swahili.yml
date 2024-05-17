@@ -1,0 +1,17 @@
+back: process error
+menu_play: Cheza
+menu_options: Chaguo
+menu_quit: Acha
+menu_connection_create: Unda
+menu_connection_join: Jiunge
+menu_roomOptions_networkAddress: Anwani ya Mtandao
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Bandari
+menu_roomOptions_maxConnections: Viunganisho vya Juu
+menu_roomOptions_connectionType: Aina ya Muunganisho
+menu_options_language: Lugha
+menu_options_resolution: Azimio
+menu_options_fullscreenMode: Hali ya skrini nzima
+menu_options_refreshRate: Kiwango cha Kuonyesha upya
+menu_options_pcConfig: Kibodi na Kipanya
+menu_options_gamepadConfig: Pedi ya mchezo

@@ -1,0 +1,17 @@
+back: process error
+menu_play: O'ynang
+menu_options: Variantlar
+menu_quit: Chiqish
+menu_connection_create: Yaratmoq
+menu_connection_join: Qo'shilish
+menu_roomOptions_networkAddress: Tarmoq manzili
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Maksimal ulanishlar
+menu_roomOptions_connectionType: Ulanish turi
+menu_options_language: Til
+menu_options_resolution: Rezolyutsiya
+menu_options_fullscreenMode: To'liq ekran rejimi
+menu_options_refreshRate: Yangilanish tezligi
+menu_options_pcConfig: Klaviatura va sichqoncha
+menu_options_gamepadConfig: Geympad

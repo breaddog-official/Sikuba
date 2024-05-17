@@ -1,0 +1,17 @@
+back: 戻る
+menu_play: 遊ぶ
+menu_options: オプション
+menu_quit: やめる
+menu_connection_create: 作成する
+menu_connection_join: 参加する
+menu_roomOptions_networkAddress: ネットワークアドレス
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: ポート
+menu_roomOptions_maxConnections: 最大接続数
+menu_roomOptions_connectionType: 接続タイプ
+menu_options_language: 言語
+menu_options_resolution: 解決
+menu_options_fullscreenMode: 全画面モード
+menu_options_refreshRate: リフレッシュレート
+menu_options_pcConfig: キーボードとマウス
+menu_options_gamepadConfig: ゲームパッド

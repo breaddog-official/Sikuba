@@ -1,0 +1,17 @@
+back: Rug
+menu_play: Toneelstuk
+menu_options: Opties
+menu_quit: Ontslag nemen
+menu_connection_create: Creëren
+menu_connection_join: Meedoen
+menu_roomOptions_networkAddress: Netwerkadres
+menu_roomOptions_steamId: StoomID
+menu_roomOptions_port: Haven
+menu_roomOptions_maxConnections: Maximale verbindingen
+menu_roomOptions_connectionType: Connectie type
+menu_options_language: Taal
+menu_options_resolution: Oplossing
+menu_options_fullscreenMode: Volledig schermmodus
+menu_options_refreshRate: Vernieuwingsfrequentie
+menu_options_pcConfig: Toetsenbord muis
+menu_options_gamepadConfig: Gamepad

@@ -1,0 +1,17 @@
+back: 後退
+menu_play: 玩
+menu_options: 選項
+menu_quit: 辭職
+menu_connection_create: 創造
+menu_connection_join: 加入
+menu_roomOptions_networkAddress: 網路位址
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: 港口
+menu_roomOptions_maxConnections: 最大連線數
+menu_roomOptions_connectionType: 連接類型
+menu_options_language: 語言
+menu_options_resolution: 解決
+menu_options_fullscreenMode: 全螢幕模式
+menu_options_refreshRate: 重新整理率
+menu_options_pcConfig: 鍵盤和滑鼠
+menu_options_gamepadConfig: 遊戲手把

@@ -1,0 +1,17 @@
+back: Kembali
+menu_play: Bermain
+menu_options: Pilihan
+menu_quit: Berhenti
+menu_connection_create: Membuat
+menu_connection_join: Bergabung
+menu_roomOptions_networkAddress: Alamat Jaringan
+menu_roomOptions_steamId: ID Uap
+menu_roomOptions_port: Pelabuhan
+menu_roomOptions_maxConnections: Koneksi Maks
+menu_roomOptions_connectionType: Jenis Koneksi
+menu_options_language: Bahasa
+menu_options_resolution: Resolusi
+menu_options_fullscreenMode: Mode layar penuh
+menu_options_refreshRate: Kecepatan Penyegaran
+menu_options_pcConfig: Papan Ketik & Tikus
+menu_options_gamepadConfig: papan permainan

@@ -1,0 +1,17 @@
+back: process error
+menu_play: שפּיל
+menu_options: אָפּציעס
+menu_quit: פאַרלאָזן
+menu_connection_create: שאַפֿן
+menu_connection_join: פאַרבינדן
+menu_roomOptions_networkAddress: נעץ אַדרעס
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: פּאָרט
+menu_roomOptions_maxConnections: מאַקס קאַנעקשאַנז
+menu_roomOptions_connectionType: קשר טיפּ
+menu_options_language: שפּראַך
+menu_options_resolution: האַכלאָטע
+menu_options_fullscreenMode: פולסקרעען מאָדע
+menu_options_refreshRate: דערפרישן קורס
+menu_options_pcConfig: קלאַוויאַטור & מאַוס
+menu_options_gamepadConfig: גאַמעפּאַד

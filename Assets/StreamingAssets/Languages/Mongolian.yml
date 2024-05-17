@@ -1,0 +1,17 @@
+back: process error
+menu_play: Тоглох
+menu_options: Сонголтууд
+menu_quit: Гарах
+menu_connection_create: Үүсгэх
+menu_connection_join: Нэгдэх
+menu_roomOptions_networkAddress: Сүлжээний хаяг
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Порт
+menu_roomOptions_maxConnections: Хамгийн их холболтууд
+menu_roomOptions_connectionType: Холболтын төрөл
+menu_options_language: Хэл
+menu_options_resolution: Шийдвэр
+menu_options_fullscreenMode: Бүтэн дэлгэцийн горим
+menu_options_refreshRate: Сэргээх хурд
+menu_options_pcConfig: Гар, хулгана
+menu_options_gamepadConfig: Тоглоомын самбар

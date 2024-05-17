@@ -1,0 +1,17 @@
+back: process error
+menu_play: खेळा
+menu_options: पर्याय
+menu_quit: सोडा
+menu_connection_create: तयार करा
+menu_connection_join: सामील व्हा
+menu_roomOptions_networkAddress: नेटवर्क पत्ता
+menu_roomOptions_steamId: स्टीमआयडी
+menu_roomOptions_port: बंदर
+menu_roomOptions_maxConnections: कमाल कनेक्शन
+menu_roomOptions_connectionType: कनेक्शन प्रकार
+menu_options_language: इंग्रजी
+menu_options_resolution: ठराव
+menu_options_fullscreenMode: पूर्णस्क्रीन मोड
+menu_options_refreshRate: रीफ्रेश दर
+menu_options_pcConfig: कीबोर्ड आणि माउस
+menu_options_gamepadConfig: गेमपॅड

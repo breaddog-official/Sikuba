@@ -1,0 +1,17 @@
+back: Zadní
+menu_play: Hrát si
+menu_options: Možnosti
+menu_quit: Přestat
+menu_connection_create: Vytvořit
+menu_connection_join: Připojit
+menu_roomOptions_networkAddress: Síťová adresa
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Přístav
+menu_roomOptions_maxConnections: Maximální počet připojení
+menu_roomOptions_connectionType: Typ připojení
+menu_options_language: Jazyk
+menu_options_resolution: Rozlišení
+menu_options_fullscreenMode: Režim celé obrazovky
+menu_options_refreshRate: Obnovovací frekvence
+menu_options_pcConfig: Klávesnice a myš
+menu_options_gamepadConfig: Gamepad

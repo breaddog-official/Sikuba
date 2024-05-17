@@ -1,0 +1,17 @@
+back: 뒤쪽에
+menu_play: 놀다
+menu_options: 옵션
+menu_quit: 그만두다
+menu_connection_create: 만들다
+menu_connection_join: 가입하다
+menu_roomOptions_networkAddress: 네트워크 주소
+menu_roomOptions_steamId: 스팀ID
+menu_roomOptions_port: 포트
+menu_roomOptions_maxConnections: 최대 연결
+menu_roomOptions_connectionType: 연결 타입
+menu_options_language: 언어
+menu_options_resolution: 해결
+menu_options_fullscreenMode: 전체 화면으로보기
+menu_options_refreshRate: 재생률
+menu_options_pcConfig: 키보드 및 마우스
+menu_options_gamepadConfig: 게임패드

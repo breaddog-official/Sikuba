@@ -1,0 +1,17 @@
+back: process error
+menu_play: Ulin
+menu_options: Pilihan
+menu_quit: Kaluar
+menu_connection_create: Nyiptakeun
+menu_connection_join: gabung
+menu_roomOptions_networkAddress: Alamat jaringan
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Palabuhan
+menu_roomOptions_maxConnections: Sambungan Max
+menu_roomOptions_connectionType: Tipe Sambungan
+menu_options_language: Basa
+menu_options_resolution: Resolusi
+menu_options_fullscreenMode: Modeu salayar
+menu_options_refreshRate: Laju Anyarkeun
+menu_options_pcConfig: Kibor & Beurit
+menu_options_gamepadConfig: Gamepad

@@ -1,0 +1,17 @@
+back: process error
+menu_play: Oynamak
+menu_options: Seçenekler
+menu_quit: Çıkış yapmak
+menu_connection_create: Yaratmak
+menu_connection_join: Katılmak
+menu_roomOptions_networkAddress: Ağ adresi
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Liman
+menu_roomOptions_maxConnections: Maksimum Bağlantı
+menu_roomOptions_connectionType: Bağlantı türü
+menu_options_language: Dil
+menu_options_resolution: Çözünürlük
+menu_options_fullscreenMode: Tam ekran modu
+menu_options_refreshRate: Yenileme hızı
+menu_options_pcConfig: Klavye fare
+menu_options_gamepadConfig: Oyun kumandası

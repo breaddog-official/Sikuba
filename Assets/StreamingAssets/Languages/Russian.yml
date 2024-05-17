@@ -1,0 +1,17 @@
+back: process error
+menu_play: Играть
+menu_options: Параметры
+menu_quit: Покидать
+menu_connection_create: Создавать
+menu_connection_join: Присоединиться
+menu_roomOptions_networkAddress: Сетевой адрес
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Порт
+menu_roomOptions_maxConnections: Максимальное количество подключений
+menu_roomOptions_connectionType: Тип соединения
+menu_options_language: Язык
+menu_options_resolution: Разрешение
+menu_options_fullscreenMode: Полноэкранный режим
+menu_options_refreshRate: Частота обновления
+menu_options_pcConfig: Клавиатура и мышь
+menu_options_gamepadConfig: Геймпад

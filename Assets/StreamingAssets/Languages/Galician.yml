@@ -1,0 +1,17 @@
+back: De volta
+menu_play: Xogar
+menu_options: Opcións
+menu_quit: Saír
+menu_connection_create: Crear
+menu_connection_join: Únete
+menu_roomOptions_networkAddress: Enderezo de rede
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Porto
+menu_roomOptions_maxConnections: Conexións máximas
+menu_roomOptions_connectionType: Tipo de conexión
+menu_options_language: Lingua
+menu_options_resolution: Resolución
+menu_options_fullscreenMode: Modo de pantalla completa
+menu_options_refreshRate: Taxa de actualización
+menu_options_pcConfig: Teclado e rato
+menu_options_gamepadConfig: Gamepad

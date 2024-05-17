@@ -1,0 +1,17 @@
+back: process error
+menu_play: Уйна
+menu_options: Вариантлар
+menu_quit: Тукта
+menu_connection_create: Ярат
+menu_connection_join: Кушыл
+menu_roomOptions_networkAddress: Челтәр адресы
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Порт
+menu_roomOptions_maxConnections: Макс бәйләнешләр
+menu_roomOptions_connectionType: Бәйләнеш төре
+menu_options_language: Тел
+menu_options_resolution: Резолюция
+menu_options_fullscreenMode: Тулы экран режимы
+menu_options_refreshRate: Ставканы яңарту
+menu_options_pcConfig: Клавиатура һәм тычкан
+menu_options_gamepadConfig: Геймпад

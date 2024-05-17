@@ -1,0 +1,17 @@
+back: belakang
+menu_play: Main
+menu_options: Pilihan
+menu_quit: Berhenti
+menu_connection_create: process error
+menu_connection_join: Sertai
+menu_roomOptions_networkAddress: Alamat Rangkaian
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Pelabuhan
+menu_roomOptions_maxConnections: Sambungan Maks
+menu_roomOptions_connectionType: Jenis sambungan
+menu_options_language: Bahasa
+menu_options_resolution: Resolusi
+menu_options_fullscreenMode: Mod skrin penuh
+menu_options_refreshRate: Kadar Segar Semula
+menu_options_pcConfig: Papan Kekunci & Tetikus
+menu_options_gamepadConfig: Pad permainan

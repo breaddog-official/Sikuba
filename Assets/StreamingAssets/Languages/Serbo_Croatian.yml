@@ -1,0 +1,17 @@
+back: process error
+menu_play: Игра
+menu_options: Опције
+menu_quit: Одустати
+menu_connection_create: Креирај
+menu_connection_join: Придружити
+menu_roomOptions_networkAddress: Мрежна адреса
+menu_roomOptions_steamId: СтеамИД
+menu_roomOptions_port: Лука
+menu_roomOptions_maxConnections: Мак Цоннецтионс
+menu_roomOptions_connectionType: Врста конекције
+menu_options_language: Језик
+menu_options_resolution: Резолуција
+menu_options_fullscreenMode: Режим целог екрана
+menu_options_refreshRate: Рефресх Рате
+menu_options_pcConfig: Тастатура и миш
+menu_options_gamepadConfig: Гамепад

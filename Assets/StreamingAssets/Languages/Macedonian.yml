@@ -1,0 +1,17 @@
+back: Назад
+menu_play: Играј
+menu_options: Опции
+menu_quit: Откажи
+menu_connection_create: Креирај
+menu_connection_join: Приклучи се
+menu_roomOptions_networkAddress: Мрежна адреса
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Пристаниште
+menu_roomOptions_maxConnections: Максимални врски
+menu_roomOptions_connectionType: process error
+menu_options_language: Јазик
+menu_options_resolution: Резолуција
+menu_options_fullscreenMode: Режим на цел екран
+menu_options_refreshRate: Стапка на освежување
+menu_options_pcConfig: Тастатура и глушец
+menu_options_gamepadConfig: Подлога за игра

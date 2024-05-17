@@ -1,0 +1,17 @@
+back: Ետ
+menu_play: Խաղալ
+menu_options: Ընտրանքներ
+menu_quit: Դուրս գալ
+menu_connection_create: Ստեղծել
+menu_connection_join: Միանալ
+menu_roomOptions_networkAddress: Ցանցի հասցե
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Նավահանգիստ
+menu_roomOptions_maxConnections: Առավելագույն կապեր
+menu_roomOptions_connectionType: Միացման տեսակը
+menu_options_language: Լեզու
+menu_options_resolution: Բանաձեւ
+menu_options_fullscreenMode: Ամբողջ էկրանով ռեժիմ
+menu_options_refreshRate: Թարմացման արագություն
+menu_options_pcConfig: Ստեղնաշար և մկնիկ
+menu_options_gamepadConfig: Gamepad

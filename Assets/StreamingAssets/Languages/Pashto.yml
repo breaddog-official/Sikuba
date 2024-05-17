@@ -1,0 +1,17 @@
+back: process error
+menu_play: لوبه وکړئ
+menu_options: اختیارونه
+menu_quit: پریږده
+menu_connection_create: جوړ کړئ
+menu_connection_join: ګډون وکړئ
+menu_roomOptions_networkAddress: د شبکې پته
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: پورټ
+menu_roomOptions_maxConnections: اعظمي ارتباطات
+menu_roomOptions_connectionType: د پیوستون ډول
+menu_options_language: ژبه
+menu_options_resolution: قرارداد
+menu_options_fullscreenMode: د بشپړ سکرین حالت
+menu_options_refreshRate: د تازه کولو نرخ
+menu_options_pcConfig: کیبورډ او موږک
+menu_options_gamepadConfig: د لوبې پیډ

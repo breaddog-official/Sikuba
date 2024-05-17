@@ -1,0 +1,17 @@
+back: process error
+menu_play: راند
+menu_options: اختيارن
+menu_quit: ڇڏڻ
+menu_connection_create: ٺاهيو
+menu_connection_join: شامل ٿيڻ
+menu_roomOptions_networkAddress: نيٽ ورڪ ايڊريس
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: بندرگاهه
+menu_roomOptions_maxConnections: وڌ ۾ وڌ ڪنيڪشن
+menu_roomOptions_connectionType: ڪنيڪشن جو قسم
+menu_options_language: ٻولي
+menu_options_resolution: قرارداد
+menu_options_fullscreenMode: مڪمل اسڪرين موڊ
+menu_options_refreshRate: ريفريش جي شرح
+menu_options_pcConfig: ڪي بورڊ ۽ ماؤس
+menu_options_gamepadConfig: گيم پيڊ

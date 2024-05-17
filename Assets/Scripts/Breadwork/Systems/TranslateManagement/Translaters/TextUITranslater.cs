@@ -11,6 +11,7 @@ namespace Scripts.TranslateManagement
         protected override void OnEnable()
         {
             text = text ? text : GetComponent<Text>();
+            base.OnEnable();
         }
         public override void ChangeElement()
         {

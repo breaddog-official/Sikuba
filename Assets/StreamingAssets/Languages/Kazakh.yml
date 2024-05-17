@@ -1,0 +1,17 @@
+back: Артқа
+menu_play: Ойнау
+menu_options: Опциялар
+menu_quit: Шығу
+menu_connection_create: Жасау
+menu_connection_join: Қосылыңыз
+menu_roomOptions_networkAddress: Желі мекенжайы
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Порт
+menu_roomOptions_maxConnections: Максималды қосылымдар
+menu_roomOptions_connectionType: Қосылым түрі
+menu_options_language: Тіл
+menu_options_resolution: Ажыратымдылық
+menu_options_fullscreenMode: Толық экран режимі
+menu_options_refreshRate: Жаңарту жылдамдығы
+menu_options_pcConfig: Пернетақта және тінтуір
+menu_options_gamepadConfig: Геймпад

@@ -1,0 +1,17 @@
+back: Назад
+menu_play: гуляць
+menu_options: Параметры
+menu_quit: Выйсці
+menu_connection_create: Ствараць
+menu_connection_join: Далучайцеся
+menu_roomOptions_networkAddress: Сеткавы адрас
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Порт
+menu_roomOptions_maxConnections: Макс падключэнняў
+menu_roomOptions_connectionType: Тып злучэння
+menu_options_language: мова
+menu_options_resolution: дазвол
+menu_options_fullscreenMode: Поўнаэкранны рэжым
+menu_options_refreshRate: Частата абнаўлення
+menu_options_pcConfig: Клавіятура і мыш
+menu_options_gamepadConfig: Геймпад

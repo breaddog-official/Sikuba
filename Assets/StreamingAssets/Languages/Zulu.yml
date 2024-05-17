@@ -1,0 +1,17 @@
+back: process error
+menu_play: Dlala
+menu_options: Izinketho
+menu_quit: Yeka
+menu_connection_create: Dala
+menu_connection_join: Joyina
+menu_roomOptions_networkAddress: Ikheli Lenethiwekhi
+menu_roomOptions_steamId: I-SteamID
+menu_roomOptions_port: Itheku
+menu_roomOptions_maxConnections: Ukuxhumana Okukhulu
+menu_roomOptions_connectionType: Uhlobo Lokuxhumana
+menu_options_language: Ulimi
+menu_options_resolution: Isixazululo
+menu_options_fullscreenMode: Imodi yesikrini esigcwele
+menu_options_refreshRate: Isilinganiso Sokuvuselela
+menu_options_pcConfig: Ikhibhodi & Igundane
+menu_options_gamepadConfig: Iphedi yegeyimu

@@ -1,0 +1,17 @@
+back: Mbrapa
+menu_play: Luaj
+menu_options: Opsione
+menu_quit: Hiq dorë
+menu_connection_create: Krijo
+menu_connection_join: Bashkohu
+menu_roomOptions_networkAddress: Adresa e rrjetit
+menu_roomOptions_steamId: SteamID
+menu_roomOptions_port: Port
+menu_roomOptions_maxConnections: Lidhjet maksimale
+menu_roomOptions_connectionType: Lloji i lidhjes
+menu_options_language: Gjuhe
+menu_options_resolution: Rezolucioni
+menu_options_fullscreenMode: Modaliteti i ekranit të plotë
+menu_options_refreshRate: Shpejtësia e rifreskimit
+menu_options_pcConfig: Tastierë dhe maus
+menu_options_gamepadConfig: Tabela e lojës

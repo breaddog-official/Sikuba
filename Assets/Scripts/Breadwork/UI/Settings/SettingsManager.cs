@@ -148,12 +148,12 @@ namespace Scripts.Settings
                     else Application.targetFrameRate = -1;
                 },
             });
-            Settings.Add(new Setting<int>(defaultValue: (int)TranslateManager.GameLanguage)
+            Settings.Add(new Setting<string>(defaultValue: Enum.GetName(typeof(ApplicationLanguage), TranslateManager.GameLanguage))
             {
                 name = "Language",
-                action = (int value) =>
+                action = (string value) =>
                 {
-                    TranslateManager.ChangeLanguage((ApplicationLanguage)value);
+                    TranslateManager.ChangeLanguageString(value);
                 },
             });
         }

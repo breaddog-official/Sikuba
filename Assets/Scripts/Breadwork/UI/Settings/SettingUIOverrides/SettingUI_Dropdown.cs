@@ -7,7 +7,7 @@ namespace Scripts.Settings
     public class SettingUI_Dropdown : SettingUI
     {
         TMP_Dropdown dropdown;
-        private void Start()
+        protected virtual void Start()
         { 
             dropdown = GetComponent<TMP_Dropdown>();
             dropdown.value = SettingsManager.ReadValue<int>(Index);
